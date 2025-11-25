@@ -12,14 +12,14 @@
     <generator>Hugo -- 0.152.2</generator>
     <language>zh</language>
     <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Tue, 25 Nov 2025 16:00:11 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 31 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>第一篇博客</title>
+      <title>使用 Cloudflare 托管 Hugo 网站的完整指南</title>
       <link>http://localhost:1313/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Tue, 25 Nov 2025 16:00:11 +0800</pubDate>
+      <pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</guid>
-      <description>介绍如何使用 PaperMod 主题的基本配置和封面设置。</description>
+      <description>本文详细介绍了如何利用 Cloudflare 平台托管 Hugo 生成的静态网站，涵盖所需的前提条件、配置文件编写、自动构建脚本编写以及 Cloudflare 与 GitHub 的连接步骤，实现网站的持续部署和自动更新。</description>
     </item>
   </channel>
 </rss>

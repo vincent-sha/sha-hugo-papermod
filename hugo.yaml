@@ -29,19 +29,22 @@ languages:
       tag: tags
       series: series
     menu:
-      main:
-        - name: 归档
-          url: archives
-          weight: 5
+      main:  
         - name: 分类
           url: categories/
           weight: 10
+        - name: 专题
+          url: series/
+          weight: 20
         - name: 标签
           url: tags/
-          weight: 15
+          weight: 30
+        - name: 归档
+          url: archives
+          weight: 40
         - name: 搜索
           url: search/
-          weight: 20
+          weight: 50
         - name: WiKi
           url: https://github.com/adityatelange/hugo-PaperMod/wiki/
 

@@ -3,33 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-11-25T16:00:11+08:00</lastmod>
+    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/hugo/</loc>
-    <lastmod>2025-11-25T16:00:11+08:00</lastmod>
+    <loc>http://localhost:1313/tags/cloudflare/</loc>
+    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/hugo/</loc>
+    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-25T16:00:11+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/papermod/</loc>
-    <lastmod>2025-11-25T16:00:11+08:00</lastmod>
+    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-11-25T16:00:11+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-11-25T16:00:11+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2025-11-25T16:00:11+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2025-11-25T16:00:11+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2025-11-25T16:00:11+08:00</lastmod>
+    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/series/</loc>
+    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E5%BB%BA%E7%AB%99/</loc>
+    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/archives/</loc>
   </url><url>
