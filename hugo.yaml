@@ -1,4 +1,4 @@
-baseURL: "https://examplesite.com/"
+baseURL: "https://sha-hugo-papermod.vincentshajing.workers.dev/"
 theme: PaperMod
 title: PaperMod
 copyright: "© [PaperMod Contributors](https://github.com/adityatelange/hugo-PaperMod/graphs/contributors)"
