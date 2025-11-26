@@ -1,6 +1,6 @@
 baseURL: "https://sha-hugo-papermod.vincentshajing.workers.dev/"
 theme: PaperMod
-title: PaperMod
+title: 文森的科技博客
 copyright: "© [PaperMod Contributors](https://github.com/adityatelange/hugo-PaperMod/graphs/contributors)"
 
 enableInlineShortcodes: true
@@ -58,7 +58,7 @@ outputs:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
-  author: Theme PaperMod
+  author: 文森
   # author: ["Me", "You"] # multiple authors
 
   defaultTheme: auto
@@ -81,8 +81,10 @@ params:
 
   profileMode:
     enabled: false
-    title: PaperMod
-    imageUrl: "#"
+    title: "文森的科技博客"
+    subtitle: "专注于分享技术干货与编程知识"
+    description: "欢迎来到文森的科技博客，这里有最新的技术文章和编程教程，助你提升技能，探索科技的无限可能！"
+    imageUrl: "images/tech-blog.svg"
     imageTitle: my image
     # imageWidth: 120
     # imageHeight: 120
@@ -93,20 +95,14 @@ params:
         url: tags
 
   homeInfoParams:
-    Title: "PaperMod's Demo"
+    Title: "Welcome to Vincent's Tech-Blog!"
     Content: >
-      👋 Welcome to demo page of Hugo's theme PaperMod!
-
-      - **PaperMod**  is designed to be clean and simple but fast and responsive theme with useful feature-set that enhances UX.
-
-      - Feel free to show your support by giving us a star 🌟 on GitHub and sharing with your friends and social media .
-
-      - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper/tree/4330c8b12aa48bfdecbcad6ad66145f679a430b3).
+      ![欢迎图片](images/undraw_building-a-website_1wrp.svg)
 
   socialIcons:
     - name: github
       title: View Source on Github
-      url: "https://github.com/adityatelange/hugo-PaperMod"
+      url: "https://github.com/vincent-sha"
     - name: Discord
       title: Join discord community
       url: "https://discord.gg/ahpmTvhVmp"
@@ -122,11 +118,11 @@ params:
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
-  # label:
-  # iconSVG: '<svg xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 -960 960 960" fill="currentColor"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>'
-  # text: "Home"
-  # icon: icon.png
-  # iconHeight: 35
+  label:
+  iconSVG: '<svg xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 -960 960 960" fill="currentColor"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>'
+  text: "Home"
+  icon: icon.png
+  iconHeight: 35
 
   # analytics:
   #     google:

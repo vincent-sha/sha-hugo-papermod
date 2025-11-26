@@ -3,6 +3,7 @@ author: 文森
 title: 使用 Cloudflare 托管 Hugo 网站的完整指南
 date: 2025-10-31
 lastmod: 2025-10-31
+slug: host-hugo-site-on-cloudflare
 draft: false
 description: 本文详细介绍了如何利用 Cloudflare 平台托管 Hugo 生成的静态网站，涵盖所需的前提条件、配置文件编写、自动构建脚本编写以及 Cloudflare 与 GitHub 的连接步骤，实现网站的持续部署和自动更新。
 categories:
@@ -14,7 +15,7 @@ tags:
   - 部署
   - cloudflare
 cover:
-  image: images/image11.png
+  image: images/cloudflare-cover-001.jpg
 ShowToc: true
 ShowBreadCrumbs: true
 comments: true
