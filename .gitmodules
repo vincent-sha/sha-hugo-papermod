@@ -1,4 +1,4 @@
 [submodule "themes/PaperMod"]
 	path = themes/PaperMod
 	url = https://github.com/vincent-sha/hugo-PaperMod-sha.git
-	branch = feature/new
+	branch = feature/new-comment
