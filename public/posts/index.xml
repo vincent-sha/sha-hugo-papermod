@@ -12,14 +12,35 @@
     <generator>Hugo -- 0.152.2</generator>
     <language>zh</language>
     <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Fri, 31 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git与GitHub技术小白入门指南</title>
+      <link>http://localhost:1313/posts/git-and-github-introduction-guide/</link>
+      <pubDate>Sun, 02 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/git-and-github-introduction-guide/</guid>
+      <description>一目了然，掌握Git的基本概念及其工作流程，并阐述了GitHub作为协作平台的作用，帮助技术小白快速掌握从安装、分支管理到协作开发的完整使用方法。</description>
+    </item>
     <item>
       <title>使用 Cloudflare 托管 Hugo 网站的完整指南</title>
       <link>http://localhost:1313/posts/host-hugo-site-on-cloudflare/</link>
       <pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/host-hugo-site-on-cloudflare/</guid>
       <description>本文详细介绍了如何利用 Cloudflare 平台托管 Hugo 生成的静态网站，涵盖所需的前提条件、配置文件编写、自动构建脚本编写以及 Cloudflare 与 GitHub 的连接步骤，实现网站的持续部署和自动更新。</description>
+    </item>
+    <item>
+      <title>Hugo静态网站快速入门指南</title>
+      <link>http://localhost:1313/posts/hugo-quick-start-guide/</link>
+      <pubDate>Thu, 30 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hugo-quick-start-guide/</guid>
+      <description>本文详细介绍了如何快速搭建一个 Hugo 网站，包括环境准备、创建站点、添加内容、配置网站和发布站点的完整流程。适合有一定命令行基础的用户快速上手 Hugo 静态网站生成器。</description>
+    </item>
+    <item>
+      <title>Swift6.2新功能大详解</title>
+      <link>http://localhost:1313/posts/swift-6-2-new-features-xcode26/</link>
+      <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/swift-6-2-new-features-xcode26/</guid>
+      <description>Swift6.2作为 Swift6的第二个版本，内置于 Xcode26，本文详细介绍了swift6.2新特性的用法与示例，助力 Swift 开发者快速掌握。</description>
     </item>
   </channel>
 </rss>
