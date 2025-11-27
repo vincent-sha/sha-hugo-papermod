@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Giscus on 文森的科技博客</title>
+    <link>http://localhost:1313/tags/giscus/</link>
+    <description>Recent content in Giscus on 文森的科技博客</description>
+    <image>
+      <title>文森的科技博客</title>
+      <url>http://localhost:1313/images/papermod-cover.png</url>
+      <link>http://localhost:1313/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh</language>
+    <copyright>PaperMod Contributors</copyright>
+    <lastBuildDate>Wed, 19 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/giscus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo 评论系统及 giscus 详细安装教程</title>
+      <link>http://localhost:1313/posts/hugo-comments-systems-comparison-giscus-setup/</link>
+      <pubDate>Wed, 19 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hugo-comments-systems-comparison-giscus-setup/</guid>
+      <description>本文针对 Hugo 支持的主流评论系统进行横向比较和分析。重点介绍开源且隐私友好的 giscus 评论系统，以及针对 Hugo 站点的详细安装步骤、配置方法和常见问题排查，帮助用户快速搭建现代化的 GitHub 驱动评论功能。</description>
+    </item>
+  </channel>
+</rss>
