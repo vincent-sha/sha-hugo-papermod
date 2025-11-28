@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>新功能 on 文森的科技小站</title>
-    <link>http://localhost:62140/tags/%E6%96%B0%E5%8A%9F%E8%83%BD/</link>
+    <link>http://localhost:1313/tags/%E6%96%B0%E5%8A%9F%E8%83%BD/</link>
     <description>Recent content in 新功能 on 文森的科技小站</description>
     <image>
       <title>文森的科技小站</title>
-      <url>http://localhost:62140/images/papermod-cover.png</url>
-      <link>http://localhost:62140/images/papermod-cover.png</link>
+      <url>http://localhost:1313/images/papermod-cover.png</url>
+      <link>http://localhost:1313/images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh</language>
     <copyright>文森的科技小站 2025</copyright>
     <lastBuildDate>Fri, 03 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:62140/tags/%E6%96%B0%E5%8A%9F%E8%83%BD/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E6%96%B0%E5%8A%9F%E8%83%BD/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Swift6.2新功能大详解</title>
-      <link>http://localhost:62140/posts/swift-6-2-new-features-xcode26/</link>
+      <link>http://localhost:1313/posts/swift-6-2-new-features-xcode26/</link>
       <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62140/posts/swift-6-2-new-features-xcode26/</guid>
+      <guid>http://localhost:1313/posts/swift-6-2-new-features-xcode26/</guid>
       <description>Swift6.2作为 Swift6的第二个版本，内置于 Xcode26，本文详细介绍了swift6.2新特性的用法与示例，助力 Swift 开发者快速掌握。</description>
     </item>
   </channel>

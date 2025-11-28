@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>入门 on 文森的科技小站</title>
-    <link>http://localhost:62140/tags/%E5%85%A5%E9%97%A8/</link>
+    <link>http://localhost:1313/tags/%E5%85%A5%E9%97%A8/</link>
     <description>Recent content in 入门 on 文森的科技小站</description>
     <image>
       <title>文森的科技小站</title>
-      <url>http://localhost:62140/images/papermod-cover.png</url>
-      <link>http://localhost:62140/images/papermod-cover.png</link>
+      <url>http://localhost:1313/images/papermod-cover.png</url>
+      <link>http://localhost:1313/images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh</language>
     <copyright>文森的科技小站 2025</copyright>
     <lastBuildDate>Sun, 02 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:62140/tags/%E5%85%A5%E9%97%A8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%85%A5%E9%97%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git与GitHub技术小白入门指南</title>
-      <link>http://localhost:62140/posts/git-and-github-introduction-guide/</link>
+      <link>http://localhost:1313/posts/git-and-github-introduction-guide/</link>
       <pubDate>Sun, 02 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62140/posts/git-and-github-introduction-guide/</guid>
+      <guid>http://localhost:1313/posts/git-and-github-introduction-guide/</guid>
       <description>一目了然，掌握Git的基本概念及其工作流程，并阐述了GitHub作为协作平台的作用，帮助技术小白快速掌握从安装、分支管理到协作开发的完整使用方法。</description>
     </item>
     <item>
       <title>Hugo静态网站快速入门指南</title>
-      <link>http://localhost:62140/posts/hugo-quick-start-guide/</link>
+      <link>http://localhost:1313/posts/hugo-quick-start-guide/</link>
       <pubDate>Thu, 30 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62140/posts/hugo-quick-start-guide/</guid>
+      <guid>http://localhost:1313/posts/hugo-quick-start-guide/</guid>
       <description>本文详细介绍了如何快速搭建一个 Hugo 网站，包括环境准备、创建站点、添加内容、配置网站和发布站点的完整流程。适合有一定命令行基础的用户快速上手 Hugo 静态网站生成器。</description>
     </item>
   </channel>
