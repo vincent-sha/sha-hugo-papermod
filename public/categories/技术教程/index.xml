@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>技术教程 on 文森的科技小站</title>
-    <link>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</link>
+    <link>http://localhost:62140/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</link>
     <description>Recent content in 技术教程 on 文森的科技小站</description>
     <image>
       <title>文森的科技小站</title>
-      <url>http://localhost:1313/images/papermod-cover.png</url>
-      <link>http://localhost:1313/images/papermod-cover.png</link>
+      <url>http://localhost:62140/images/papermod-cover.png</url>
+      <link>http://localhost:62140/images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh</language>
-    <copyright>PaperMod Contributors</copyright>
+    <copyright>文森的科技小站 2025</copyright>
     <lastBuildDate>Fri, 28 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:62140/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git常用命令详解与实用指南</title>
-      <link>http://localhost:1313/posts/git-common-commands-guide/</link>
+      <link>http://localhost:62140/posts/git-common-commands-guide/</link>
       <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/git-common-commands-guide/</guid>
+      <guid>http://localhost:62140/posts/git-common-commands-guide/</guid>
       <description>本文系统整理了Git的常用命令，包括初始化仓库、配置用户信息、分支管理、代码提交、查看日志、远程操作、文件管理等，帮助用户快速掌握Git版本控制的基本操作与进阶用法，提高代码管理效率。</description>
     </item>
     <item>
       <title>Hugo 评论系统及 giscus 详细安装教程</title>
-      <link>http://localhost:1313/posts/hugo-comments-systems-comparison-giscus-setup/</link>
+      <link>http://localhost:62140/posts/hugo-comments-systems-comparison-giscus-setup/</link>
       <pubDate>Wed, 19 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hugo-comments-systems-comparison-giscus-setup/</guid>
+      <guid>http://localhost:62140/posts/hugo-comments-systems-comparison-giscus-setup/</guid>
       <description>本文针对 Hugo 支持的主流评论系统进行横向比较和分析。重点介绍开源且隐私友好的 giscus 评论系统，以及针对 Hugo 站点的详细安装步骤、配置方法和常见问题排查，帮助用户快速搭建现代化的 GitHub 驱动评论功能。</description>
     </item>
     <item>
       <title>Git与GitHub技术小白入门指南</title>
-      <link>http://localhost:1313/posts/git-and-github-introduction-guide/</link>
+      <link>http://localhost:62140/posts/git-and-github-introduction-guide/</link>
       <pubDate>Sun, 02 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/git-and-github-introduction-guide/</guid>
+      <guid>http://localhost:62140/posts/git-and-github-introduction-guide/</guid>
       <description>一目了然，掌握Git的基本概念及其工作流程，并阐述了GitHub作为协作平台的作用，帮助技术小白快速掌握从安装、分支管理到协作开发的完整使用方法。</description>
     </item>
     <item>
       <title>使用 Cloudflare 托管 Hugo 网站的完整指南</title>
-      <link>http://localhost:1313/posts/host-hugo-site-on-cloudflare/</link>
+      <link>http://localhost:62140/posts/host-hugo-site-on-cloudflare/</link>
       <pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/host-hugo-site-on-cloudflare/</guid>
+      <guid>http://localhost:62140/posts/host-hugo-site-on-cloudflare/</guid>
       <description>本文详细介绍了如何利用 Cloudflare 平台托管 Hugo 生成的静态网站，涵盖所需的前提条件、配置文件编写、自动构建脚本编写以及 Cloudflare 与 GitHub 的连接步骤，实现网站的持续部署和自动更新。</description>
     </item>
     <item>
       <title>Hugo静态网站快速入门指南</title>
-      <link>http://localhost:1313/posts/hugo-quick-start-guide/</link>
+      <link>http://localhost:62140/posts/hugo-quick-start-guide/</link>
       <pubDate>Thu, 30 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hugo-quick-start-guide/</guid>
+      <guid>http://localhost:62140/posts/hugo-quick-start-guide/</guid>
       <description>本文详细介绍了如何快速搭建一个 Hugo 网站，包括环境准备、创建站点、添加内容、配置网站和发布站点的完整流程。适合有一定命令行基础的用户快速上手 Hugo 静态网站生成器。</description>
     </item>
     <item>
       <title>Swift6.2新功能大详解</title>
-      <link>http://localhost:1313/posts/swift-6-2-new-features-xcode26/</link>
+      <link>http://localhost:62140/posts/swift-6-2-new-features-xcode26/</link>
       <pubDate>Fri, 03 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/swift-6-2-new-features-xcode26/</guid>
+      <guid>http://localhost:62140/posts/swift-6-2-new-features-xcode26/</guid>
       <description>Swift6.2作为 Swift6的第二个版本，内置于 Xcode26，本文详细介绍了swift6.2新特性的用法与示例，助力 Swift 开发者快速掌握。</description>
     </item>
   </channel>

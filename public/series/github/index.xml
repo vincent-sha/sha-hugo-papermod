@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Github on 文森的科技小站</title>
-    <link>http://localhost:1313/series/github/</link>
+    <link>http://localhost:62140/series/github/</link>
     <description>Recent content in Github on 文森的科技小站</description>
     <image>
       <title>文森的科技小站</title>
-      <url>http://localhost:1313/images/papermod-cover.png</url>
-      <link>http://localhost:1313/images/papermod-cover.png</link>
+      <url>http://localhost:62140/images/papermod-cover.png</url>
+      <link>http://localhost:62140/images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh</language>
-    <copyright>PaperMod Contributors</copyright>
+    <copyright>文森的科技小站 2025</copyright>
     <lastBuildDate>Fri, 28 Nov 2025 07:06:55 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/series/github/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:62140/series/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TrendRadar：实时趋势监测与可视化平台</title>
-      <link>http://localhost:1313/posts/trendrader-real-time-trend-monitoring/</link>
+      <link>http://localhost:62140/posts/trendrader-real-time-trend-monitoring/</link>
       <pubDate>Fri, 28 Nov 2025 07:06:55 +0000</pubDate>
-      <guid>http://localhost:1313/posts/trendrader-real-time-trend-monitoring/</guid>
+      <guid>http://localhost:62140/posts/trendrader-real-time-trend-monitoring/</guid>
       <description>TrendRadar 是一个基于数据分析的趋势监测工具，能够实时捕捉和展示网络上的热门话题和趋势，帮助用户快速了解市场动态和行业热点。</description>
     </item>
     <item>
       <title>Git常用命令详解与实用指南</title>
-      <link>http://localhost:1313/posts/git-common-commands-guide/</link>
+      <link>http://localhost:62140/posts/git-common-commands-guide/</link>
       <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/git-common-commands-guide/</guid>
+      <guid>http://localhost:62140/posts/git-common-commands-guide/</guid>
       <description>本文系统整理了Git的常用命令，包括初始化仓库、配置用户信息、分支管理、代码提交、查看日志、远程操作、文件管理等，帮助用户快速掌握Git版本控制的基本操作与进阶用法，提高代码管理效率。</description>
     </item>
     <item>
       <title>Git与GitHub技术小白入门指南</title>
-      <link>http://localhost:1313/posts/git-and-github-introduction-guide/</link>
+      <link>http://localhost:62140/posts/git-and-github-introduction-guide/</link>
       <pubDate>Sun, 02 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/git-and-github-introduction-guide/</guid>
+      <guid>http://localhost:62140/posts/git-and-github-introduction-guide/</guid>
       <description>一目了然，掌握Git的基本概念及其工作流程，并阐述了GitHub作为协作平台的作用，帮助技术小白快速掌握从安装、分支管理到协作开发的完整使用方法。</description>
     </item>
   </channel>
