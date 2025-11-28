@@ -286,13 +286,31 @@ git commit -m "更新主题子模块到最新版本"
 git push
 ```
 
-## 求助与资源
+### 修改主题子模块
 
-- Hugo 官方论坛：https://discourse.gohugo.io/，社区活跃，适合提问和查找问题答案。
-- 阅读求助指南：[请求帮助注意事项](https://discourse.gohugo.io/t/requesting-help/9132)
-- 更多学习资源，包括书籍和视频教程，见：[外部学习资源](http://gohugo.io/getting-started/external-learning-resources/)
+先把主题fork到自己的GitHub仓库（这一步很重要）
 
----
+把fork的主题作为子模块添加到Hugo项目
+
+```bash
+git submodule add https://github.com/你的用户名/主题名 themes/主题名
+```
+
+直接在子模块里修改 + 推送
+
+```bash
+cd themes/主题名
+# 修改文件…
+git add .
+git commit -m "修改主题..."
+git push origin main   # 直接推到原仓库
+或者 git push origin feature/new  # 推送到new的分支
+# 回到主项目
+cd ../..
+git add themes/主题名
+git commit -m "更新主题..."
+git push
+```
 
 ## 相关链接
 

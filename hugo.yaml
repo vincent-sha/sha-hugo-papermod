@@ -1,6 +1,6 @@
-baseURL: "https://sha-hugo-papermod.vincentshajing.workers.dev/"
+baseURL: "https://vincent-blog.top/"
 theme: PaperMod
-title: 文森的科技博客
+title: 文森的科技小站
 copyright: "© [PaperMod Contributors](https://github.com/adityatelange/hugo-PaperMod/graphs/contributors)"
 
 enableInlineShortcodes: true
@@ -81,9 +81,9 @@ params:
 
   profileMode:
     enabled: false
-    title: "文森的科技博客"
+    title: "文森的科技小站"
     subtitle: "专注于分享技术干货与编程知识"
-    description: "欢迎来到文森的科技博客，这里有最新的技术文章和编程教程，助你提升技能，探索科技的无限可能！"
+    description: "欢迎来到文森的科技小站，这里有最新的技术文章和编程教程，助你提升技能，探索科技的无限可能！"
     imageUrl: "images/tech-blog.svg"
     imageTitle: my image
     # imageWidth: 120

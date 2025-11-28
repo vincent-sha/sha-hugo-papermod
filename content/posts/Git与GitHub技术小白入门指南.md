@@ -22,13 +22,13 @@ comments: true
 
 # Git与GitHub入门指南
 
-![Git远程示意图](https://github.githubassets.com/assets/git-guides-ba03f3804dde.png)
-
 Git是一款分布式版本控制软件，用于记录代码的历史变更，支持多分支开发和远程协作。本文将带你从零开始了解Git的基本概念、优势、常用命令及工作流程，并介绍GitHub平台如何助力团队协作。
 
 ---
 
-## 什么是Git？
+## Git和GitHub基本概念
+
+### Git简介
 
 Git是一种分布式版本控制系统，意味着每个开发者本地都有完整的仓库副本，包括所有提交、分支和文件。与集中式版本控制不同，Git允许离线操作并提供更强的灵活性。
 
@@ -36,27 +36,31 @@ Git是一种分布式版本控制系统，意味着每个开发者本地都有�
 - 通过SHA哈希存储变更，适合文本文件版本管理，不适合大二进制文件
 - 支持本地和远程仓库连接，方便推送（push）和拉取（pull）代码
 
-## Git的编写语言
-
 Git核心组件由C语言、Shell脚本、Perl和Tcl编写，源代码托管在GitHub的[git/git仓库](https://github.com/git/git)。
 
-## 为什么使用Git？
+### GitHub简介
+
+GitHub是基于Git的协作平台，支持拉取请求、代码评审、集成测试等功能，极大提升团队开发效率。开发者通常在本地使用Git进行开发，通过GitHub进行远程协作。
+
+学习Git与GitHub的最佳实践课程推荐[GitHub学习实验室](https://lab.github.com/githubtraining/introduction-to-github)。
+
+### 为什么使用Git？
 
 使用版本控制可以有效防止代码丢失，Git具有以下显著优势：
 
-### 速度快
+1. 速度快
 
 Git通过SHA压缩技术，使代码提交和检索速度极快。
 
-### 处理合并冲突能力强
+1. 处理合并冲突能力强
 
 允许多人同时编辑同一文件，Git能智能处理冲突，保障团队协作顺畅。
 
-### 分支成本低
+1. 分支成本低
 
 分支创建和管理成本低，开发者可以在分支中安全开发，及时推送并获得反馈。
 
-### 易于回滚
+1. 易于回滚
 
 提交不可更改，只能新增替代提交，支持轻松回退到历史版本，降低开发风险。
 
@@ -110,15 +114,9 @@ git remote -v
 5. **协作开发**：团队成员可以在拉取请求中评论、审查并提出修改建议。
 6. **合并分支**：确认无误后，将功能分支合并到`main`，并删除已完成的分支。
 
-### GitHub简介
-
-GitHub是基于Git的协作平台，支持拉取请求、代码评审、集成测试等功能，极大提升团队开发效率。开发者通常在本地使用Git进行开发，通过GitHub进行远程协作。
-
-学习Git与GitHub的最佳实践课程推荐[GitHub学习实验室](https://lab.github.com/githubtraining/introduction-to-github)。
-
 ---
 
-## **设置 Git与**GitHub
+## **Git与**GitHub初次配置
 
 ### 1、下载并安装最新版本的Git
 
@@ -130,7 +128,7 @@ git --version
 
 - 如果返回类似 git version 2.x.x，说明 Git 已安装。
 
-### 综合一键检测脚本（复制粘贴运行）
+综合一键检测脚本（复制粘贴运行）
 
 ```bash
 echo "1. 检查 Git 版本..."
@@ -234,12 +232,107 @@ git remote add origin git@github.com:vincentS1981/existing-project.git
 git push -u origin main
 ```
 
-### 每天更新代码只需 3 行
+每天更新代码只需 3 行
 
 ```bash
 git add .
 git commit -m "修复了登录 bug"
 git push
+```
+
+### 场景三：克隆远程仓库到本地，开展工作流程
+
+1. 直接 clone （根据需要选择如下几种方式）
+
+```bash
+## 完整克隆项目，包括版本提交历史
+git clone https://github.com/xxx/yyy.git
+# 或者 SSH 方式（推荐，免输密码）
+git clone git@github.com:xxx/yyy.git
+## 仅克隆最新一次提交的代码仓库
+git clone --depth=1 https://github.com/xxx/yyy.git
+```
+
+1. 进入项目目录
+
+```bash
+cd yyy
+```
+
+1. 查看远程分支情况
+
+```bash
+git branch -a        # 查看所有分支
+git remote show origin   # 看远程默认分支是哪个
+```
+
+1. 创建并切换到自己的开发分支（强烈推荐！不要直接在 main/master 上改）
+
+```bash
+# 推荐命名方式（选一个你团队习惯的）
+git checkout -b feature/功能描述
+# 或者
+git checkout -b dev-你的名字
+# 或者
+git checkout -b bugfix/xxxxxx
+
+# 推到远程建立同名分支（以后就不用再加 -u 了）
+git push -u origin feature/功能描述
+```
+
+1. 日常开发完整流程（以后每天都这么干）
+
+```bash
+# 1. 每天开始工作前，先拉最新代码（防止冲突）
+git pull        # 或者 git pull --rebase（保持线性历史）
+
+# 2. 正常写代码...
+
+# 3. 修改完了，分阶段提交（推荐小提交）
+git add .
+git commit -m "feat: 添加用户登录功能"
+
+# 4. 推送到远程自己的分支
+git push        # 因为之前加了 -u，这里直接 push 就行
+
+# 5. 去 GitLab/GitHub 网页点 Merge Request / Pull Request
+#    让别人 review，合并到 main/master/develop 分支
+```
+
+### 场景四：本地有修改未提交，如何拉取远程合并
+
+```bash
+# 把本地分支强制重置为远程完全一致的状态（所有本地修改全丢）
+git fetch origin
+git reset --hard origin/你的分支名
+
+# 例如你当前在 main 分支
+git fetch origin
+git reset --hard origin/main
+
+# 如果你想顺便清理未跟踪的文件（比如新生成的文件）
+git clean -fd
+```
+
+或者：
+
+```jsx
+# 1. 先把本地修改暂时藏起来
+git stash push -m "临时保存的修改"
+
+# 2. 拉取远程并合并（或变基）
+git pull                  # 或者 git pull --rebase
+# 或者更稳妥：
+# git fetch origin
+# git rebase origin/main   #（以 main 为例）
+
+# 3. 之后如果你还想要回刚才的修改
+git stash pop             # 恢复刚才藏起来的修改，可能会有冲突需要手动解决
+
+# 如果确认不要了，直接清空stash
+git stash drop            # 删掉最近一个
+# 或
+git stash clear           # 清空所有stash
 ```
 
 ## 相关资源

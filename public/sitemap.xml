@@ -3,7 +3,67 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <lastmod>2025-11-28T07:06:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/github/</loc>
+    <lastmod>2025-11-28T07:06:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-11-28T07:06:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/</loc>
+    <lastmod>2025-11-28T07:06:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-11-28T07:06:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/trendrader-real-time-trend-monitoring/</loc>
+    <lastmod>2025-11-28T07:06:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2025-11-28T07:06:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-11-28T07:06:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E6%8A%93%E5%8F%96%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2025-11-28T07:06:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2025-11-28T07:06:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/stranger-things-season-5-biggest-twists-explained/</loc>
+    <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/git/</loc>
+    <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/git-common-commands-guide/</loc>
+    <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E7%AC%AC%E4%BA%94%E5%AD%A3/</loc>
+    <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E6%80%AA%E6%B0%94%E7%89%A9%E8%AF%AD/</loc>
+    <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E5%89%A7%E6%83%85%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/series/%E7%83%AD%E9%97%A8%E7%94%B5%E8%A7%86/</loc>
+    <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/%E5%BD%B1%E8%A7%86%E8%B5%84%E8%AE%AF/</loc>
+    <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2025-11-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/comment/</loc>
     <lastmod>2025-11-19T00:00:00+00:00</lastmod>
@@ -17,29 +77,8 @@
     <loc>http://localhost:1313/posts/hugo-comments-systems-comparison-giscus-setup/</loc>
     <lastmod>2025-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/series/</loc>
-    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%89%A9%E5%B1%95/</loc>
     <lastmod>2025-11-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/git/</loc>
-    <lastmod>2025-11-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/series/github/</loc>
-    <lastmod>2025-11-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/git-and-github-introduction-guide/</loc>
     <lastmod>2025-11-02T00:00:00+00:00</lastmod>

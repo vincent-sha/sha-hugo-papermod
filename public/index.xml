@@ -1,19 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>文森的科技博客</title>
+    <title>文森的科技小站</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on 文森的科技博客</description>
+    <description>Recent content on 文森的科技小站</description>
     <image>
-      <title>文森的科技博客</title>
+      <title>文森的科技小站</title>
       <url>http://localhost:1313/images/papermod-cover.png</url>
       <link>http://localhost:1313/images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh</language>
     <copyright>PaperMod Contributors</copyright>
-    <lastBuildDate>Wed, 19 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Nov 2025 07:06:55 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TrendRadar：实时趋势监测与可视化平台</title>
+      <link>http://localhost:1313/posts/trendrader-real-time-trend-monitoring/</link>
+      <pubDate>Fri, 28 Nov 2025 07:06:55 +0000</pubDate>
+      <guid>http://localhost:1313/posts/trendrader-real-time-trend-monitoring/</guid>
+      <description>TrendRadar 是一个基于数据分析的趋势监测工具，能够实时捕捉和展示网络上的热门话题和趋势，帮助用户快速了解市场动态和行业热点。</description>
+    </item>
+    <item>
+      <title>《怪奇物语》第五季前半季反转解析</title>
+      <link>http://localhost:1313/posts/stranger-things-season-5-biggest-twists-explained/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/stranger-things-season-5-biggest-twists-explained/</guid>
+      <description>《怪奇物语》第五季前四集中的重大剧情反转，包括威尔获得超能力、卡莉意外回归以及维克纳的阴谋等。达弗兄弟分享了创作背后的故事和角色发展，揭示了终极季如何回归原点并为系列画上完美句号。</description>
+    </item>
+    <item>
+      <title>Git常用命令详解与实用指南</title>
+      <link>http://localhost:1313/posts/git-common-commands-guide/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/git-common-commands-guide/</guid>
+      <description>本文系统整理了Git的常用命令，包括初始化仓库、配置用户信息、分支管理、代码提交、查看日志、远程操作、文件管理等，帮助用户快速掌握Git版本控制的基本操作与进阶用法，提高代码管理效率。</description>
+    </item>
     <item>
       <title>Hugo 评论系统及 giscus 详细安装教程</title>
       <link>http://localhost:1313/posts/hugo-comments-systems-comparison-giscus-setup/</link>

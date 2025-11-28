@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>剧情解析 on 文森的科技小站</title>
+    <link>http://localhost:1313/tags/%E5%89%A7%E6%83%85%E8%A7%A3%E6%9E%90/</link>
+    <description>Recent content in 剧情解析 on 文森的科技小站</description>
+    <image>
+      <title>文森的科技小站</title>
+      <url>http://localhost:1313/images/papermod-cover.png</url>
+      <link>http://localhost:1313/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh</language>
+    <copyright>PaperMod Contributors</copyright>
+    <lastBuildDate>Fri, 28 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%89%A7%E6%83%85%E8%A7%A3%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>《怪奇物语》第五季前半季反转解析</title>
+      <link>http://localhost:1313/posts/stranger-things-season-5-biggest-twists-explained/</link>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/stranger-things-season-5-biggest-twists-explained/</guid>
+      <description>《怪奇物语》第五季前四集中的重大剧情反转，包括威尔获得超能力、卡莉意外回归以及维克纳的阴谋等。达弗兄弟分享了创作背后的故事和角色发展，揭示了终极季如何回归原点并为系列画上完美句号。</description>
+    </item>
+  </channel>
+</rss>

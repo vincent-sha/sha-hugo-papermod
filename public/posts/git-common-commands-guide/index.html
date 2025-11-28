@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Git常用命令详解与实用指南 | 文森的科技小站</title>
+<meta name="keywords" content="git, 命令, 指南">
+<meta name="description" content="本文系统整理了Git的常用命令，包括初始化仓库、配置用户信息、分支管理、代码提交、查看日志、远程操作、文件管理等，帮助用户快速掌握Git版本控制的基本操作与进阶用法，提高代码管理效率。">
+<meta name="author" content="文森">
+<link rel="canonical" href="http://localhost:1313/posts/git-common-commands-guide/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="http://localhost:1313/posts/git-common-commands-guide/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="http://localhost:1313/posts/git-common-commands-guide/">
+  <meta property="og:site_name" content="文森的科技小站">
+  <meta property="og:title" content="Git常用命令详解与实用指南">
+  <meta property="og:description" content="本文系统整理了Git的常用命令，包括初始化仓库、配置用户信息、分支管理、代码提交、查看日志、远程操作、文件管理等，帮助用户快速掌握Git版本控制的基本操作与进阶用法，提高代码管理效率。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-11-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-11-28T00:00:00+00:00">
+    <meta property="article:tag" content="Git">
+    <meta property="article:tag" content="命令">
+    <meta property="article:tag" content="指南">
+    <meta property="og:image" content="http://localhost:1313/images/github-cover-001.jpg">
+      <meta property="og:see_also" content="http://localhost:1313/posts/trendrader-real-time-trend-monitoring/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/git-and-github-introduction-guide/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/images/github-cover-001.jpg">
+<meta name="twitter:title" content="Git常用命令详解与实用指南">
+<meta name="twitter:description" content="本文系统整理了Git的常用命令，包括初始化仓库、配置用户信息、分支管理、代码提交、查看日志、远程操作、文件管理等，帮助用户快速掌握Git版本控制的基本操作与进阶用法，提高代码管理效率。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Git常用命令详解与实用指南",
+      "item": "http://localhost:1313/posts/git-common-commands-guide/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Git常用命令详解与实用指南",
+  "name": "Git常用命令详解与实用指南",
+  "description": "本文系统整理了Git的常用命令，包括初始化仓库、配置用户信息、分支管理、代码提交、查看日志、远程操作、文件管理等，帮助用户快速掌握Git版本控制的基本操作与进阶用法，提高代码管理效率。",
+  "keywords": [
+    "git", "命令", "指南"
+  ],
+  "articleBody": "Git 常用命令详解与实用指南 本文总结了Git的核心命令，涵盖从初始化仓库到远程协作的各个方面，帮助你高效管理代码版本。\n初始化与配置 # 初始化本地Git仓库 git init # 配置全局用户名和邮箱 git config --global user.name \"你的用户名\" git config --global user.email \"你的邮箱\" # 启用命令输出颜色，提升可读性 git config --global color.ui true git config --global color.status auto git config --global color.diff auto git config --global color.branch auto git config --global color.interactive auto # 取消HTTP代理设置 git config --global --unset http.proxy 克隆与远程仓库操作 # 克隆远程仓库 git clone git+ssh://git@192.168.53.168/VT.git # 添加远程仓库地址 git remote add origin git+ssh://git@192.168.53.168/VT.git # 查看远程仓库分支 git branch -r # 获取远程分支数据（不自动合并） git fetch git fetch --prune # 同时清理远程已删除分支 # 拉取远程分支并合并到当前分支 git pull origin master # 推送当前分支到远程仓库 git push origin master # 推送所有标签 git push --tags # 删除远程分支 git push origin :hotfixes/BJVEP933 版本状态查看与文件管理 # 查看当前仓库状态 git status # 将文件添加到暂存区 git add xyz git add . # 添加当前目录所有变更文件 # 提交改动 git commit -m '提交信息' # 修改上一次提交信息 git commit --amend -m '新的提交信息' # 一步完成添加并提交（仅限已跟踪文件） git commit -am '提交信息' # 删除文件（同时从暂存区和工作区删除） git rm 文件名 # 递归删除当前目录所有文件 git rm -r * # 重命名文件 git mv README README2 # 查看Git索引包含的文件 git ls-files 日志查看与版本比较 # 显示提交日志 git log # 显示最近1条日志 git log -1 # 显示最近5条日志 git log -5 # 显示日志及相关文件变动统计 git log --stat # 显示详细的提交差异 git log -p -m # 查看指定提交的详细信息 git show dfb02e6 # 查看最新提交 git show HEAD # 查看上一个版本提交 git show HEAD^ # 查看标签信息 git tag git tag -a v2.0 -m '版本说明' # 创建带注释的标签 # 查看标签的提交信息 git show v2.0 # 查看标签的日志 git log v2.0 # 显示未暂存的文件差异 git diff # 显示已暂存但未提交的变更 git diff --cached # 比较与上一个版本的差异 git diff HEAD^ # 比较指定目录的差异 git diff HEAD -- ./lib # 比较远程分支与本地分支差异 git diff origin/master..master # 只显示差异文件列表，不显示内容 git diff origin/master..master --stat 分支管理 # 查看本地分支 git branch # 查看所有本地和远程分支 git branch -a # 显示所有远程分支 git branch -r # 显示包含特定提交的分支 git branch --contains 50089 # 显示已合并到当前分支的分支 git branch --merged # 显示未合并到当前分支的分支 git branch --no-merged # 本地分支重命名 git branch -m master master_copy # 创建并切换到新分支 git checkout -b master_copy # 从远程分支创建本地新分支并切换 git checkout -b devel origin/develop # 切换到已有分支 git checkout features/performance # 检出远程分支并建立跟踪 git checkout --track hotfixes/BJVEP933 # 切换到标签版本 git checkout v2.0 # 删除本地分支（已合并） git branch -d hotfixes/BJVEP933 # 强制删除本地分支（未合并） git branch -D hotfixes/BJVEP933 合并与变基 # 合并远程master分支到当前分支 git merge origin/master # 选择性合并某次提交 git cherry-pick ff44785404a8e # 变基操作 git rebase 重置与回滚 # 硬重置到HEAD版本（丢弃未提交修改） git reset --hard HEAD # 撤销指定提交的影响（生成新提交） git revert dfb02e6e4f2f7b573337763e5c0013802e392818 # 检出某个文件回到HEAD版本（恢复文件） git checkout -- README 暂存区操作（stash） # 暂存当前修改，恢复工作区为HEAD状态 git stash # 查看暂存列表 git stash list # 显示某次暂存内容 git stash show -p stash@{0} # 应用某次暂存内容 git stash apply stash@{0} 其他实用命令 # 搜索文件内容包含\"delete from\"的文本 git grep \"delete from\" # 使用多个条件搜索 git grep -e '#define' --and -e SORT_DIRENT # 垃圾回收，优化仓库空间 git gc # 检查仓库完整性 git fsck # 查看分支历史图示 git show-branch git show-branch --all # 查看提交历史对应的文件修改 git whatchanged # 查看所有提交记录（包括孤立提交） git reflog # 查看HEAD@{5}的状态 git show HEAD@{5} # 查看master分支昨天的状态 git show master@{yesterday} # 图示日志简洁视图 git log --pretty=format:'%h %s' --graph # 查看特定提交的原始详细信息 git show -s --pretty=raw 2be7fcb476 通过熟练掌握以上Git命令，可以极大提高代码管理效率，轻松应对团队协作中的各种版本控制需求。\n提示：\n命令中的\"xxx\"和示例地址请替换为实际的用户名、邮箱和仓库地址。 使用命令前建议先了解各命令的具体作用，避免误操作造成数据丢失。 ",
+  "wordCount" : "457",
+  "inLanguage": "zh",
+  "image":"http://localhost:1313/images/github-cover-001.jpg","datePublished": "2025-11-28T00:00:00Z",
+  "dateModified": "2025-11-28T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "文森"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/git-common-commands-guide/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "文森的科技小站",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="文森的科技小站 (Alt + H)">文森的科技小站</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/" title="分类">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/series/" title="专题">
+                    <span>专题</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/adityatelange/hugo-PaperMod/wiki/" title="WiKi">
+                    <span>WiKi</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">主页</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Git常用命令详解与实用指南
+    </h1>
+    <div class="post-description">
+      本文系统整理了Git的常用命令，包括初始化仓库、配置用户信息、分支管理、代码提交、查看日志、远程操作、文件管理等，帮助用户快速掌握Git版本控制的基本操作与进阶用法，提高代码管理效率。
+    </div>
+    <div class="post-meta"><span title='2025-11-28 00:00:00 +0000 UTC'>2025年11月28日</span>&nbsp;·&nbsp;<span>3 分钟</span>&nbsp;·&nbsp;<span>文森</span>&nbsp;|&nbsp;<span>
+    <a href="https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content/posts/git%e6%93%8d%e4%bd%9c%e5%91%bd%e4%bb%a4%e5%a4%a7%e5%85%a8.md" rel="noopener noreferrer edit" target="_blank">Suggest Changes</a>
+</span>
+
+</div>
+  </header> 
+<figure class="entry-cover">
+            <img loading="eager"
+                srcset='http://localhost:1313/images/github-cover-001_hu_4a8dd2dcf801880c.jpg 360w,http://localhost:1313/images/github-cover-001_hu_7a0861ef900d9cfd.jpg 480w,http://localhost:1313/images/github-cover-001_hu_cf83b8b2c0a74b43.jpg 720w,http://localhost:1313/images/github-cover-001_hu_7ed936c6a670af6e.jpg 1080w,http://localhost:1313/images/github-cover-001.jpg 1280w'
+                src="http://localhost:1313/images/github-cover-001.jpg"
+                sizes="(min-width: 768px) 720px, 100vw"
+                width="1280" height="720"
+                alt="">
+        
+</figure><div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#git-%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e8%af%a6%e8%a7%a3%e4%b8%8e%e5%ae%9e%e7%94%a8%e6%8c%87%e5%8d%97" aria-label="Git 常用命令详解与实用指南">Git 常用命令详解与实用指南</a><ul>
+                        
+                <li>
+                    <a href="#%e5%88%9d%e5%a7%8b%e5%8c%96%e4%b8%8e%e9%85%8d%e7%bd%ae" aria-label="初始化与配置">初始化与配置</a></li>
+                <li>
+                    <a href="#%e5%85%8b%e9%9a%86%e4%b8%8e%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93%e6%93%8d%e4%bd%9c" aria-label="克隆与远程仓库操作">克隆与远程仓库操作</a></li>
+                <li>
+                    <a href="#%e7%89%88%e6%9c%ac%e7%8a%b6%e6%80%81%e6%9f%a5%e7%9c%8b%e4%b8%8e%e6%96%87%e4%bb%b6%e7%ae%a1%e7%90%86" aria-label="版本状态查看与文件管理">版本状态查看与文件管理</a></li>
+                <li>
+                    <a href="#%e6%97%a5%e5%bf%97%e6%9f%a5%e7%9c%8b%e4%b8%8e%e7%89%88%e6%9c%ac%e6%af%94%e8%be%83" aria-label="日志查看与版本比较">日志查看与版本比较</a></li>
+                <li>
+                    <a href="#%e5%88%86%e6%94%af%e7%ae%a1%e7%90%86" aria-label="分支管理">分支管理</a></li>
+                <li>
+                    <a href="#%e5%90%88%e5%b9%b6%e4%b8%8e%e5%8f%98%e5%9f%ba" aria-label="合并与变基">合并与变基</a></li>
+                <li>
+                    <a href="#%e9%87%8d%e7%bd%ae%e4%b8%8e%e5%9b%9e%e6%bb%9a" aria-label="重置与回滚">重置与回滚</a></li>
+                <li>
+                    <a href="#%e6%9a%82%e5%ad%98%e5%8c%ba%e6%93%8d%e4%bd%9cstash" aria-label="暂存区操作（stash）">暂存区操作（stash）</a></li>
+                <li>
+                    <a href="#%e5%85%b6%e4%bb%96%e5%ae%9e%e7%94%a8%e5%91%bd%e4%bb%a4" aria-label="其他实用命令">其他实用命令</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="git-常用命令详解与实用指南">Git 常用命令详解与实用指南<a hidden class="anchor" aria-hidden="true" href="#git-常用命令详解与实用指南">#</a></h1>
+<p>本文总结了Git的核心命令，涵盖从初始化仓库到远程协作的各个方面，帮助你高效管理代码版本。</p>
+<hr>
+<h2 id="初始化与配置">初始化与配置<a hidden class="anchor" aria-hidden="true" href="#初始化与配置">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 初始化本地Git仓库</span>
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 配置全局用户名和邮箱</span>
+</span></span><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;你的用户名&#34;</span>
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;你的邮箱&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启用命令输出颜色，提升可读性</span>
+</span></span><span class="line"><span class="cl">git config --global color.ui <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">git config --global color.status auto
+</span></span><span class="line"><span class="cl">git config --global color.diff auto
+</span></span><span class="line"><span class="cl">git config --global color.branch auto
+</span></span><span class="line"><span class="cl">git config --global color.interactive auto
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 取消HTTP代理设置</span>
+</span></span><span class="line"><span class="cl">git config --global --unset http.proxy
+</span></span></code></pre></div><h2 id="克隆与远程仓库操作">克隆与远程仓库操作<a hidden class="anchor" aria-hidden="true" href="#克隆与远程仓库操作">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 克隆远程仓库</span>
+</span></span><span class="line"><span class="cl">git clone git+ssh://git@192.168.53.168/VT.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加远程仓库地址</span>
+</span></span><span class="line"><span class="cl">git remote add origin git+ssh://git@192.168.53.168/VT.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看远程仓库分支</span>
+</span></span><span class="line"><span class="cl">git branch -r
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 获取远程分支数据（不自动合并）</span>
+</span></span><span class="line"><span class="cl">git fetch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git fetch --prune  <span class="c1"># 同时清理远程已删除分支</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 拉取远程分支并合并到当前分支</span>
+</span></span><span class="line"><span class="cl">git pull origin master
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 推送当前分支到远程仓库</span>
+</span></span><span class="line"><span class="cl">git push origin master
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 推送所有标签</span>
+</span></span><span class="line"><span class="cl">git push --tags
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除远程分支</span>
+</span></span><span class="line"><span class="cl">git push origin :hotfixes/BJVEP933
+</span></span></code></pre></div><hr>
+<h2 id="版本状态查看与文件管理">版本状态查看与文件管理<a hidden class="anchor" aria-hidden="true" href="#版本状态查看与文件管理">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看当前仓库状态</span>
+</span></span><span class="line"><span class="cl"> git status
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 将文件添加到暂存区</span>
+</span></span><span class="line"><span class="cl"> git add xyz
+</span></span><span class="line"><span class="cl"> git add .  <span class="c1"># 添加当前目录所有变更文件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 提交改动</span>
+</span></span><span class="line"><span class="cl"> git commit -m <span class="s1">&#39;提交信息&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改上一次提交信息</span>
+</span></span><span class="line"><span class="cl"> git commit --amend -m <span class="s1">&#39;新的提交信息&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 一步完成添加并提交（仅限已跟踪文件）</span>
+</span></span><span class="line"><span class="cl"> git commit -am <span class="s1">&#39;提交信息&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除文件（同时从暂存区和工作区删除）</span>
+</span></span><span class="line"><span class="cl"> git rm 文件名
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 递归删除当前目录所有文件</span>
+</span></span><span class="line"><span class="cl"> git rm -r *
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重命名文件</span>
+</span></span><span class="line"><span class="cl"> git mv README README2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看Git索引包含的文件</span>
+</span></span><span class="line"><span class="cl"> git ls-files
+</span></span></code></pre></div><hr>
+<h2 id="日志查看与版本比较">日志查看与版本比较<a hidden class="anchor" aria-hidden="true" href="#日志查看与版本比较">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 显示提交日志</span>
+</span></span><span class="line"><span class="cl"> git log
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示最近1条日志</span>
+</span></span><span class="line"><span class="cl"> git log -1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示最近5条日志</span>
+</span></span><span class="line"><span class="cl"> git log -5
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示日志及相关文件变动统计</span>
+</span></span><span class="line"><span class="cl"> git log --stat
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示详细的提交差异</span>
+</span></span><span class="line"><span class="cl"> git log -p -m
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看指定提交的详细信息</span>
+</span></span><span class="line"><span class="cl"> git show dfb02e6
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看最新提交</span>
+</span></span><span class="line"><span class="cl"> git show HEAD
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看上一个版本提交</span>
+</span></span><span class="line"><span class="cl"> git show HEAD^
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看标签信息</span>
+</span></span><span class="line"><span class="cl"> git tag
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">git tag -a v2.0 -m <span class="s1">&#39;版本说明&#39;</span>  <span class="c1"># 创建带注释的标签</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看标签的提交信息</span>
+</span></span><span class="line"><span class="cl"> git show v2.0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看标签的日志</span>
+</span></span><span class="line"><span class="cl"> git log v2.0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示未暂存的文件差异</span>
+</span></span><span class="line"><span class="cl"> git diff
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示已暂存但未提交的变更</span>
+</span></span><span class="line"><span class="cl"> git diff --cached
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 比较与上一个版本的差异</span>
+</span></span><span class="line"><span class="cl"> git diff HEAD^
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 比较指定目录的差异</span>
+</span></span><span class="line"><span class="cl"> git diff HEAD -- ./lib
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 比较远程分支与本地分支差异</span>
+</span></span><span class="line"><span class="cl"> git diff origin/master..master
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 只显示差异文件列表，不显示内容</span>
+</span></span><span class="line"><span class="cl"> git diff origin/master..master --stat
+</span></span></code></pre></div><hr>
+<h2 id="分支管理">分支管理<a hidden class="anchor" aria-hidden="true" href="#分支管理">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查看本地分支</span>
+</span></span><span class="line"><span class="cl"> git branch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看所有本地和远程分支</span>
+</span></span><span class="line"><span class="cl"> git branch -a
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示所有远程分支</span>
+</span></span><span class="line"><span class="cl"> git branch -r
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示包含特定提交的分支</span>
+</span></span><span class="line"><span class="cl"> git branch --contains <span class="m">50089</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示已合并到当前分支的分支</span>
+</span></span><span class="line"><span class="cl"> git branch --merged
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示未合并到当前分支的分支</span>
+</span></span><span class="line"><span class="cl"> git branch --no-merged
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 本地分支重命名</span>
+</span></span><span class="line"><span class="cl"> git branch -m master master_copy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建并切换到新分支</span>
+</span></span><span class="line"><span class="cl"> git checkout -b master_copy
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 从远程分支创建本地新分支并切换</span>
+</span></span><span class="line"><span class="cl"> git checkout -b devel origin/develop
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 切换到已有分支</span>
+</span></span><span class="line"><span class="cl"> git checkout features/performance
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检出远程分支并建立跟踪</span>
+</span></span><span class="line"><span class="cl"> git checkout --track hotfixes/BJVEP933
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 切换到标签版本</span>
+</span></span><span class="line"><span class="cl"> git checkout v2.0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 删除本地分支（已合并）</span>
+</span></span><span class="line"><span class="cl"> git branch -d hotfixes/BJVEP933
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 强制删除本地分支（未合并）</span>
+</span></span><span class="line"><span class="cl"> git branch -D hotfixes/BJVEP933
+</span></span></code></pre></div><hr>
+<h2 id="合并与变基">合并与变基<a hidden class="anchor" aria-hidden="true" href="#合并与变基">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 合并远程master分支到当前分支</span>
+</span></span><span class="line"><span class="cl"> git merge origin/master
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 选择性合并某次提交</span>
+</span></span><span class="line"><span class="cl"> git cherry-pick ff44785404a8e
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 变基操作</span>
+</span></span><span class="line"><span class="cl"> git rebase
+</span></span></code></pre></div><hr>
+<h2 id="重置与回滚">重置与回滚<a hidden class="anchor" aria-hidden="true" href="#重置与回滚">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 硬重置到HEAD版本（丢弃未提交修改）</span>
+</span></span><span class="line"><span class="cl"> git reset --hard HEAD
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 撤销指定提交的影响（生成新提交）</span>
+</span></span><span class="line"><span class="cl"> git revert dfb02e6e4f2f7b573337763e5c0013802e392818
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检出某个文件回到HEAD版本（恢复文件）</span>
+</span></span><span class="line"><span class="cl"> git checkout -- README
+</span></span></code></pre></div><hr>
+<h2 id="暂存区操作stash">暂存区操作（stash）<a hidden class="anchor" aria-hidden="true" href="#暂存区操作stash">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 暂存当前修改，恢复工作区为HEAD状态</span>
+</span></span><span class="line"><span class="cl"> git stash
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看暂存列表</span>
+</span></span><span class="line"><span class="cl"> git stash list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 显示某次暂存内容</span>
+</span></span><span class="line"><span class="cl"> git stash show -p stash@<span class="o">{</span>0<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 应用某次暂存内容</span>
+</span></span><span class="line"><span class="cl"> git stash apply stash@<span class="o">{</span>0<span class="o">}</span>
+</span></span></code></pre></div><hr>
+<h2 id="其他实用命令">其他实用命令<a hidden class="anchor" aria-hidden="true" href="#其他实用命令">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 搜索文件内容包含&#34;delete from&#34;的文本</span>
+</span></span><span class="line"><span class="cl"> git grep <span class="s2">&#34;delete from&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用多个条件搜索</span>
+</span></span><span class="line"><span class="cl"> git grep -e <span class="s1">&#39;#define&#39;</span> --and -e SORT_DIRENT
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 垃圾回收，优化仓库空间</span>
+</span></span><span class="line"><span class="cl"> git gc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查仓库完整性</span>
+</span></span><span class="line"><span class="cl"> git fsck
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看分支历史图示</span>
+</span></span><span class="line"><span class="cl"> git show-branch
+</span></span><span class="line"><span class="cl"> git show-branch --all
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看提交历史对应的文件修改</span>
+</span></span><span class="line"><span class="cl"> git whatchanged
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看所有提交记录（包括孤立提交）</span>
+</span></span><span class="line"><span class="cl"> git reflog
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看HEAD@{5}的状态</span>
+</span></span><span class="line"><span class="cl"> git show HEAD@<span class="o">{</span>5<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看master分支昨天的状态</span>
+</span></span><span class="line"><span class="cl"> git show master@<span class="o">{</span>yesterday<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 图示日志简洁视图</span>
+</span></span><span class="line"><span class="cl"> git log --pretty<span class="o">=</span>format:<span class="s1">&#39;%h %s&#39;</span> --graph
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看特定提交的原始详细信息</span>
+</span></span><span class="line"><span class="cl"> git show -s --pretty<span class="o">=</span>raw 2be7fcb476
+</span></span></code></pre></div><hr>
+<p>通过熟练掌握以上Git命令，可以极大提高代码管理效率，轻松应对团队协作中的各种版本控制需求。</p>
+<hr>
+<blockquote>
+<p>提示：</p>
+<ul>
+<li>命令中的&quot;xxx&quot;和示例地址请替换为实际的用户名、邮箱和仓库地址。</li>
+<li>使用命令前建议先了解各命令的具体作用，避免误操作造成数据丢失。</li>
+</ul>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/git/">Git</a></li>
+      <li><a href="http://localhost:1313/tags/%E5%91%BD%E4%BB%A4/">命令</a></li>
+      <li><a href="http://localhost:1313/tags/%E6%8C%87%E5%8D%97/">指南</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/stranger-things-season-5-biggest-twists-explained/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>《怪奇物语》第五季前半季反转解析</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/hugo-comments-systems-comparison-giscus-setup/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>Hugo 评论系统及 giscus 详细安装教程</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Git常用命令详解与实用指南 on x"
+            href="https://x.com/intent/tweet/?text=Git%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e8%af%a6%e8%a7%a3%e4%b8%8e%e5%ae%9e%e7%94%a8%e6%8c%87%e5%8d%97&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgit-common-commands-guide%2f&amp;hashtags=git%2c%e5%91%bd%e4%bb%a4%2c%e6%8c%87%e5%8d%97">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Git常用命令详解与实用指南 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgit-common-commands-guide%2f&amp;title=Git%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e8%af%a6%e8%a7%a3%e4%b8%8e%e5%ae%9e%e7%94%a8%e6%8c%87%e5%8d%97&amp;summary=Git%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e8%af%a6%e8%a7%a3%e4%b8%8e%e5%ae%9e%e7%94%a8%e6%8c%87%e5%8d%97&amp;source=http%3a%2f%2flocalhost%3a1313%2fposts%2fgit-common-commands-guide%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Git常用命令详解与实用指南 on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgit-common-commands-guide%2f&title=Git%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e8%af%a6%e8%a7%a3%e4%b8%8e%e5%ae%9e%e7%94%a8%e6%8c%87%e5%8d%97">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Git常用命令详解与实用指南 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fgit-common-commands-guide%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Git常用命令详解与实用指南 on whatsapp"
+            href="https://api.whatsapp.com/send?text=Git%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e8%af%a6%e8%a7%a3%e4%b8%8e%e5%ae%9e%e7%94%a8%e6%8c%87%e5%8d%97%20-%20http%3a%2f%2flocalhost%3a1313%2fposts%2fgit-common-commands-guide%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Git常用命令详解与实用指南 on telegram"
+            href="https://telegram.me/share/url?text=Git%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e8%af%a6%e8%a7%a3%e4%b8%8e%e5%ae%9e%e7%94%a8%e6%8c%87%e5%8d%97&amp;url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgit-common-commands-guide%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Git常用命令详解与实用指南 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Git%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e8%af%a6%e8%a7%a3%e4%b8%8e%e5%ae%9e%e7%94%a8%e6%8c%87%e5%8d%97&u=http%3a%2f%2flocalhost%3a1313%2fposts%2fgit-common-commands-guide%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer><div class="giscus">
+<script src="https://giscus.app/client.js"
+        data-repo="vincent-sha/sha-hugo-papermod"
+        data-repo-id="R_kgDOQckk_Q"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOQckk_c4CzDbZ"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+</div>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© <a href="https://github.com/adityatelange/hugo-PaperMod/graphs/contributors">PaperMod Contributors</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

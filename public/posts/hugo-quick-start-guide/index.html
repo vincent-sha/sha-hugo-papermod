@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Hugo静态网站快速入门指南 | 文森的科技博客</title>
+<title>Hugo静态网站快速入门指南 | 文森的科技小站</title>
 <meta name="keywords" content="建站, 入门">
 <meta name="description" content="本文详细介绍了如何快速搭建一个 Hugo 网站，包括环境准备、创建站点、添加内容、配置网站和发布站点的完整流程。适合有一定命令行基础的用户快速上手 Hugo 静态网站生成器。">
 <meta name="author" content="文森">
@@ -71,7 +71,7 @@
     }
 
 </script><meta property="og:url" content="http://localhost:1313/posts/hugo-quick-start-guide/">
-  <meta property="og:site_name" content="文森的科技博客">
+  <meta property="og:site_name" content="文森的科技小站">
   <meta property="og:title" content="Hugo静态网站快速入门指南">
   <meta property="og:description" content="本文详细介绍了如何快速搭建一个 Hugo 网站，包括环境准备、创建站点、添加内容、配置网站和发布站点的完整流程。适合有一定命令行基础的用户快速上手 Hugo 静态网站生成器。">
   <meta property="og:locale" content="zh">
@@ -120,8 +120,8 @@
   "keywords": [
     "建站", "入门"
   ],
-  "articleBody": "Hugo 快速入门指南（Mac平台） 简介 Hugo 是一个流行的静态网站生成器，能够帮助用户快速创建高性能的网站。本文将引导你在几分钟内搭建一个 Hugo 网站。\n前提条件 安装 Homebrew 打开 Terminal（终端），输入以下命令：\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\" 验证 Homebrew 安装成功\nbrew --version 输出类似：\nHomebrew 4.x.x 安装 Git brew install git 安装 Hugo Extended 版 brew install hugo 注意（Windows 用户）：\n请避免使用命令提示符（Command Prompt）和 Windows PowerShell。 推荐使用 PowerShell（最新版）或 Linux 终端（如 WSL 或 Git Bash）。 创建站点 主要命令 hugo new site quickstart cd quickstart git init git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke echo \"theme = 'ananke'\" \u003e\u003e hugo.toml hugo server 执行以上命令后，你可以在终端显示的地址访问你的网站。\n命令详解 hugo new site quickstart：创建名为 quickstart 的项目目录及基本目录结构。 cd quickstart：进入项目根目录。 git init：初始化一个空的 Git 仓库。 git submodule add https: //github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke：将 Ananke 主题作为子模块添加到项目中。 echo \"theme = 'ananke'\" \u003e\u003e hugo.toml：在配置文件中指定主题。 hugo server：启动 Hugo 开发服务器，实时预览网站。 按 Ctrl + C 停止开发服务器。\n添加内容 创建新内容页面：\nhugo new content/posts/my-first-post.md 此命令会在 content/posts 文件夹下生成一个 Markdown 文件，默认带有如下 Front Matter：\n+++ title = \"My First Post\" date = 2024-01-14T07:07:07+01:00 draft = true +++ draft = true 表示该内容为草稿，默认不会被发布。 你可以编辑正文部分，使用 Markdown 语法，例如： ## 介绍 这是**加粗**文本，和*斜体*文本。 访问 [Hugo 官网]() 启动开发服务器时，使用 --buildDrafts 或 -D 参数可以包含草稿内容：\nhugo server --buildDrafts # 或 hugo server -D 编辑完成并准备发布时，请将 draft 设置为 false。\nHugo 支持 CommonMark 标准的 Markdown，官方提供了在线测试工具。\n配置站点 在项目根目录打开 hugo.toml 配置文件，示例如下：\nbaseURL = '' languageCode = 'en-us' title = 'My New Hugo Site' theme = 'ananke' 需要根据实际情况修改：\nbaseURL：生产环境下网站的基础 URL，需以协议开头并以斜杠结尾。 languageCode：语言和地区代码，如 zh-cn。 title：网站标题。 保存后重新启动服务器查看效果：\nhugo server -D 不同主题可能有额外的配置项，建议查看主题的官方文档。例如，Ananke 主题的配置和使用指南见其GitHub 仓库和演示站点。\n发布站点 执行以下命令生成完整的静态网站文件：\nhugo 生成的文件位于 public 文件夹内，包含 HTML、图片、CSS 和 JavaScript 等资源。\n注意：默认不包含草稿、未来或过期内容。\n部署网站到服务器或托管平台请参考 Hugo 的托管与部署指南。\n重新部署 删掉旧站点，用第三方 trash-cli（程序员最爱，它会把文件移到废纸篓，还支持 trash-list、trash-restore 恢复。）\n# 安装（Homebrew） brew install trash # 以后永远用 trash 代替 rm trash ~/my-site # 删除my-site整个文件夹 trash *.log # 清理 Hugo 运行时产生的日志文件.log trash public/ themes/ # 典型清理 Hugo 站点时的“核弹命令” 一次性把生成文件和主题全扔废纸篓 实际使用示例（你在 Hugo 项目根目录下）\n# 你现在在 ~/Projects/my-blog 目录里 cd ~/Projects/my-blog # 1. 先把 Hugo 生成的完整站点删掉（最常用） trash public # 2. 把所有主题删掉（换新主题前常用） trash themes # 3. 把运行日志删掉 trash *.log # 4. 实在不想玩了，连源码一起删（整个站点拜拜） trash ~/Projects/my-blog # 或者直接 trash . # （点表示当前目录，慎用！） 主题安装、切换和更新 添加主题 在您的 Hugo 站点根目录下（例如 cd mysite），使用 git submodule 命令添加新主题：\ngit submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke 说明:\n新的主题仓库会被克隆到您站点的 themes/ananke 文件夹中。 您的 themes 文件夹中现在有两个主题文件夹：LoveIt 和 ananke。 主题切换 Hugo 站点使用 配置文件（ hugo.toml ）来决定使用哪个主题。\n要切换主题，您只需要修改配置文件中的 theme 这一行配置即可。\n方式一：修改 hugo.toml 文件\n打开您站点根目录下的 hugo.toml 文件（或 config.toml）：\n如果要切换到 Ananke 主题，将配置改为：\n# hugo.toml baseURL = \"http://example.org/\" languageCode = \"en-us\" title = \"My New Hugo Site\" theme = 'ananke' # \u003c-- 切换主题，主题名必须与文件夹名一致 方式二：使用命令行参数（临时切换）\n如果您只是想临时预览某个主题而不想永久修改配置文件，可以在运行 hugo server 时加上 --theme 参数：\nhugo server -D --theme ananke 更新主题并提交 要更新您已安装的主题（以主题LoveIt为例），在项目根目录下运行以下命令：\ngit submodule update --remote themes/LoveIt 回到根目录，提交更新：\ngit add themes/LoveIt 提交更改信息\ngit commit -m \"更新主题子模块到最新版本\" git push 求助与资源 Hugo 官方论坛：https://discourse.gohugo.io/，社区活跃，适合提问和查找问题答案。 阅读求助指南：请求帮助注意事项 更多学习资源，包括书籍和视频教程，见：外部学习资源 相关链接 Hugo 官网 Hugo 文档 Hugo 主题库 Hugo GitHub 仓库 ",
-  "wordCount" : "395",
+  "articleBody": "Hugo 快速入门指南（Mac平台） 简介 Hugo 是一个流行的静态网站生成器，能够帮助用户快速创建高性能的网站。本文将引导你在几分钟内搭建一个 Hugo 网站。\n前提条件 安装 Homebrew 打开 Terminal（终端），输入以下命令：\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\" 验证 Homebrew 安装成功\nbrew --version 输出类似：\nHomebrew 4.x.x 安装 Git brew install git 安装 Hugo Extended 版 brew install hugo 注意（Windows 用户）：\n请避免使用命令提示符（Command Prompt）和 Windows PowerShell。 推荐使用 PowerShell（最新版）或 Linux 终端（如 WSL 或 Git Bash）。 创建站点 主要命令 hugo new site quickstart cd quickstart git init git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke echo \"theme = 'ananke'\" \u003e\u003e hugo.toml hugo server 执行以上命令后，你可以在终端显示的地址访问你的网站。\n命令详解 hugo new site quickstart：创建名为 quickstart 的项目目录及基本目录结构。 cd quickstart：进入项目根目录。 git init：初始化一个空的 Git 仓库。 git submodule add https: //github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke：将 Ananke 主题作为子模块添加到项目中。 echo \"theme = 'ananke'\" \u003e\u003e hugo.toml：在配置文件中指定主题。 hugo server：启动 Hugo 开发服务器，实时预览网站。 按 Ctrl + C 停止开发服务器。\n添加内容 创建新内容页面：\nhugo new content/posts/my-first-post.md 此命令会在 content/posts 文件夹下生成一个 Markdown 文件，默认带有如下 Front Matter：\n+++ title = \"My First Post\" date = 2024-01-14T07:07:07+01:00 draft = true +++ draft = true 表示该内容为草稿，默认不会被发布。 你可以编辑正文部分，使用 Markdown 语法，例如： ## 介绍 这是**加粗**文本，和*斜体*文本。 访问 [Hugo 官网]() 启动开发服务器时，使用 --buildDrafts 或 -D 参数可以包含草稿内容：\nhugo server --buildDrafts # 或 hugo server -D 编辑完成并准备发布时，请将 draft 设置为 false。\nHugo 支持 CommonMark 标准的 Markdown，官方提供了在线测试工具。\n配置站点 在项目根目录打开 hugo.toml 配置文件，示例如下：\nbaseURL = '' languageCode = 'en-us' title = 'My New Hugo Site' theme = 'ananke' 需要根据实际情况修改：\nbaseURL：生产环境下网站的基础 URL，需以协议开头并以斜杠结尾。 languageCode：语言和地区代码，如 zh-cn。 title：网站标题。 保存后重新启动服务器查看效果：\nhugo server -D 不同主题可能有额外的配置项，建议查看主题的官方文档。例如，Ananke 主题的配置和使用指南见其GitHub 仓库和演示站点。\n发布站点 执行以下命令生成完整的静态网站文件：\nhugo 生成的文件位于 public 文件夹内，包含 HTML、图片、CSS 和 JavaScript 等资源。\n注意：默认不包含草稿、未来或过期内容。\n部署网站到服务器或托管平台请参考 Hugo 的托管与部署指南。\n重新部署 删掉旧站点，用第三方 trash-cli（程序员最爱，它会把文件移到废纸篓，还支持 trash-list、trash-restore 恢复。）\n# 安装（Homebrew） brew install trash # 以后永远用 trash 代替 rm trash ~/my-site # 删除my-site整个文件夹 trash *.log # 清理 Hugo 运行时产生的日志文件.log trash public/ themes/ # 典型清理 Hugo 站点时的“核弹命令” 一次性把生成文件和主题全扔废纸篓 实际使用示例（你在 Hugo 项目根目录下）\n# 你现在在 ~/Projects/my-blog 目录里 cd ~/Projects/my-blog # 1. 先把 Hugo 生成的完整站点删掉（最常用） trash public # 2. 把所有主题删掉（换新主题前常用） trash themes # 3. 把运行日志删掉 trash *.log # 4. 实在不想玩了，连源码一起删（整个站点拜拜） trash ~/Projects/my-blog # 或者直接 trash . # （点表示当前目录，慎用！） 主题安装、切换和更新 添加主题 在您的 Hugo 站点根目录下（例如 cd mysite），使用 git submodule 命令添加新主题：\ngit submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke 说明:\n新的主题仓库会被克隆到您站点的 themes/ananke 文件夹中。 您的 themes 文件夹中现在有两个主题文件夹：LoveIt 和 ananke。 主题切换 Hugo 站点使用 配置文件（ hugo.toml ）来决定使用哪个主题。\n要切换主题，您只需要修改配置文件中的 theme 这一行配置即可。\n方式一：修改 hugo.toml 文件\n打开您站点根目录下的 hugo.toml 文件（或 config.toml）：\n如果要切换到 Ananke 主题，将配置改为：\n# hugo.toml baseURL = \"http://example.org/\" languageCode = \"en-us\" title = \"My New Hugo Site\" theme = 'ananke' # \u003c-- 切换主题，主题名必须与文件夹名一致 方式二：使用命令行参数（临时切换）\n如果您只是想临时预览某个主题而不想永久修改配置文件，可以在运行 hugo server 时加上 --theme 参数：\nhugo server -D --theme ananke 更新主题并提交 要更新您已安装的主题（以主题LoveIt为例），在项目根目录下运行以下命令：\ngit submodule update --remote themes/LoveIt 回到根目录，提交更新：\ngit add themes/LoveIt 提交更改信息\ngit commit -m \"更新主题子模块到最新版本\" git push 修改主题子模块 先把主题fork到自己的GitHub仓库（这一步很重要）\n把fork的主题作为子模块添加到Hugo项目\ngit submodule add https://github.com/你的用户名/主题名 themes/主题名 直接在子模块里修改 + 推送\ncd themes/主题名 # 修改文件… git add . git commit -m \"修改主题...\" git push origin main # 直接推到原仓库 或者 git push origin feature/new # 推送到new的分支 # 回到主项目 cd ../.. git add themes/主题名 git commit -m \"更新主题...\" git push 相关链接 Hugo 官网 Hugo 文档 Hugo 主题库 Hugo GitHub 仓库 ",
+  "wordCount" : "438",
   "inLanguage": "zh",
   "image":"http://localhost:1313/images/hugo-cover-001.jpg","datePublished": "2025-10-30T00:00:00Z",
   "dateModified": "2025-10-30T00:00:00Z",
@@ -135,7 +135,7 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "文森的科技博客",
+    "name": "文森的科技小站",
     "logo": {
       "@type": "ImageObject",
       "url": "http://localhost:1313/favicon.ico"
@@ -148,7 +148,7 @@
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="文森的科技博客 (Alt + H)">文森的科技博客</a>
+            <a href="http://localhost:1313/" accesskey="h" title="文森的科技小站 (Alt + H)">文森的科技小站</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -223,7 +223,7 @@
     <div class="post-description">
       本文详细介绍了如何快速搭建一个 Hugo 网站，包括环境准备、创建站点、添加内容、配置网站和发布站点的完整流程。适合有一定命令行基础的用户快速上手 Hugo 静态网站生成器。
     </div>
-    <div class="post-meta"><span title='2025-10-30 00:00:00 +0000 UTC'>2025年10月30日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>文森</span>&nbsp;|&nbsp;<span>
+    <div class="post-meta"><span title='2025-10-30 00:00:00 +0000 UTC'>2025年10月30日</span>&nbsp;·&nbsp;<span>3 分钟</span>&nbsp;·&nbsp;<span>文森</span>&nbsp;|&nbsp;<span>
     <a href="https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content/posts/Hugo%e9%9d%99%e6%80%81%e7%bd%91%e7%ab%99%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8%e6%8c%87%e5%8d%97.md" rel="noopener noreferrer edit" target="_blank">Suggest Changes</a>
 </span>
 
@@ -283,10 +283,10 @@
                 <li>
                     <a href="#%e4%b8%bb%e9%a2%98%e5%88%87%e6%8d%a2" aria-label="主题切换">主题切换</a></li>
                 <li>
-                    <a href="#%e6%9b%b4%e6%96%b0%e4%b8%bb%e9%a2%98%e5%b9%b6%e6%8f%90%e4%ba%a4" aria-label="更新主题并提交">更新主题并提交</a></li></ul>
-                </li>
+                    <a href="#%e6%9b%b4%e6%96%b0%e4%b8%bb%e9%a2%98%e5%b9%b6%e6%8f%90%e4%ba%a4" aria-label="更新主题并提交">更新主题并提交</a></li>
                 <li>
-                    <a href="#%e6%b1%82%e5%8a%a9%e4%b8%8e%e8%b5%84%e6%ba%90" aria-label="求助与资源">求助与资源</a></li>
+                    <a href="#%e4%bf%ae%e6%94%b9%e4%b8%bb%e9%a2%98%e5%ad%90%e6%a8%a1%e5%9d%97" aria-label="修改主题子模块">修改主题子模块</a></li></ul>
+                </li>
                 <li>
                     <a href="#%e7%9b%b8%e5%85%b3%e9%93%be%e6%8e%a5" aria-label="相关链接">相关链接</a>
                 </li>
@@ -451,14 +451,23 @@
 </span></span></code></pre></div><p>提交更改信息</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git commit -m <span class="s2">&#34;更新主题子模块到最新版本&#34;</span>
 </span></span><span class="line"><span class="cl">git push
-</span></span></code></pre></div><h2 id="求助与资源">求助与资源<a hidden class="anchor" aria-hidden="true" href="#求助与资源">#</a></h2>
-<ul>
-<li>Hugo 官方论坛：https://discourse.gohugo.io/，社区活跃，适合提问和查找问题答案。</li>
-<li>阅读求助指南：<a href="https://discourse.gohugo.io/t/requesting-help/9132">请求帮助注意事项</a></li>
-<li>更多学习资源，包括书籍和视频教程，见：<a href="http://gohugo.io/getting-started/external-learning-resources/">外部学习资源</a></li>
-</ul>
-<hr>
-<h2 id="相关链接">相关链接<a hidden class="anchor" aria-hidden="true" href="#相关链接">#</a></h2>
+</span></span></code></pre></div><h3 id="修改主题子模块">修改主题子模块<a hidden class="anchor" aria-hidden="true" href="#修改主题子模块">#</a></h3>
+<p>先把主题fork到自己的GitHub仓库（这一步很重要）</p>
+<p>把fork的主题作为子模块添加到Hugo项目</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git submodule add https://github.com/你的用户名/主题名 themes/主题名
+</span></span></code></pre></div><p>直接在子模块里修改 + 推送</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> themes/主题名
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改文件…</span>
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;修改主题...&#34;</span>
+</span></span><span class="line"><span class="cl">git push origin main   <span class="c1"># 直接推到原仓库</span>
+</span></span><span class="line"><span class="cl">或者 git push origin feature/new  <span class="c1"># 推送到new的分支</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 回到主项目</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ../..
+</span></span><span class="line"><span class="cl">git add themes/主题名
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;更新主题...&#34;</span>
+</span></span><span class="line"><span class="cl">git push
+</span></span></code></pre></div><h2 id="相关链接">相关链接<a hidden class="anchor" aria-hidden="true" href="#相关链接">#</a></h2>
 <ul>
 <li><a href="http://gohugo.io/">Hugo 官网</a></li>
 <li><a href="http://gohugo.io/documentation/">Hugo 文档</a></li>

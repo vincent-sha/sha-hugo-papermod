@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Git与GitHub技术小白入门指南 | 文森的科技博客</title>
+<title>Git与GitHub技术小白入门指南 | 文森的科技小站</title>
 <meta name="keywords" content="git, 入门">
 <meta name="description" content="一目了然，掌握Git的基本概念及其工作流程，并阐述了GitHub作为协作平台的作用，帮助技术小白快速掌握从安装、分支管理到协作开发的完整使用方法。">
 <meta name="author" content="文森">
@@ -71,7 +71,7 @@
     }
 
 </script><meta property="og:url" content="http://localhost:1313/posts/git-and-github-introduction-guide/">
-  <meta property="og:site_name" content="文森的科技博客">
+  <meta property="og:site_name" content="文森的科技小站">
   <meta property="og:title" content="Git与GitHub技术小白入门指南">
   <meta property="og:description" content="一目了然，掌握Git的基本概念及其工作流程，并阐述了GitHub作为协作平台的作用，帮助技术小白快速掌握从安装、分支管理到协作开发的完整使用方法。">
   <meta property="og:locale" content="zh">
@@ -82,6 +82,8 @@
     <meta property="article:tag" content="Git">
     <meta property="article:tag" content="入门">
     <meta property="og:image" content="http://localhost:1313/images/github-cover-001.jpg">
+      <meta property="og:see_also" content="http://localhost:1313/posts/trendrader-real-time-trend-monitoring/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/git-common-commands-guide/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://localhost:1313/images/github-cover-001.jpg">
 <meta name="twitter:title" content="Git与GitHub技术小白入门指南">
@@ -118,8 +120,8 @@
   "keywords": [
     "git", "入门"
   ],
-  "articleBody": "Git与GitHub入门指南 Git是一款分布式版本控制软件，用于记录代码的历史变更，支持多分支开发和远程协作。本文将带你从零开始了解Git的基本概念、优势、常用命令及工作流程，并介绍GitHub平台如何助力团队协作。\n什么是Git？ Git是一种分布式版本控制系统，意味着每个开发者本地都有完整的仓库副本，包括所有提交、分支和文件。与集中式版本控制不同，Git允许离线操作并提供更强的灵活性。\n分支轻量且易创建，支持大量分支并行开发 通过SHA哈希存储变更，适合文本文件版本管理，不适合大二进制文件 支持本地和远程仓库连接，方便推送（push）和拉取（pull）代码 Git的编写语言 Git核心组件由C语言、Shell脚本、Perl和Tcl编写，源代码托管在GitHub的git/git仓库。\n为什么使用Git？ 使用版本控制可以有效防止代码丢失，Git具有以下显著优势：\n速度快 Git通过SHA压缩技术，使代码提交和检索速度极快。\n处理合并冲突能力强 允许多人同时编辑同一文件，Git能智能处理冲突，保障团队协作顺畅。\n分支成本低 分支创建和管理成本低，开发者可以在分支中安全开发，及时推送并获得反馈。\n易于回滚 提交不可更改，只能新增替代提交，支持轻松回退到历史版本，降低开发风险。\n如何使用Git？ 学习Git基础命令 推荐使用Git速查表，其中包含常用命令：\n# 克隆远程仓库 git clone [url] # 查看当前状态 git status # 查看分支 git branch # 切换分支 git checkout [branch-name] # 添加文件到暂存区 git add [file] # 提交代码并添加说明 git commit -m \"commit message\" # 拉取远程更新并合并 git pull # 推送本地提交 git push # 查看提交日志 git log # 查看远程仓库信息 git remote -v 更多GitHub相关的技术文档可参考GitHub帮助文档。\nGit工作流入门 创建分支：从主分支main切出新分支，建议以功能命名。 修改并提交：编辑代码后，使用git add和git commit保存变更。 推送代码到远程：首次推送新分支时，使用git push -u origin [branch-name]建立关联。 发起拉取请求（Pull Request）：请求将分支合并到main，便于代码审查和集成测试。 协作开发：团队成员可以在拉取请求中评论、审查并提出修改建议。 合并分支：确认无误后，将功能分支合并到main，并删除已完成的分支。 GitHub简介 GitHub是基于Git的协作平台，支持拉取请求、代码评审、集成测试等功能，极大提升团队开发效率。开发者通常在本地使用Git进行开发，通过GitHub进行远程协作。\n学习Git与GitHub的最佳实践课程推荐GitHub学习实验室。\n设置 Git与GitHub 1、下载并安装最新版本的Git 检查本地 Git 是否安装并可用bash\ngit --version 如果返回类似 git version 2.x.x，说明 Git 已安装。 综合一键检测脚本（复制粘贴运行） echo \"1. 检查 Git 版本...\" git --version echo -e \"\\n2. 测试 HTTPS 连接...\" curl -I https://github.com 2\u003e/dev/null | head -n 1 echo -e \"\\n3. 测试 Git 远程访问...\" git ls-remote https://github.com/git/git.git \u003e/dev/null 2\u003e\u00261 \u0026\u0026 echo \"Git 连接 GitHub 成功\" || echo \"Git 连接失败\" echo -e \"\\n4. 测试 SSH 连接（如果使用 SSH）...\" ssh -T git@github.com 2\u003e\u00261 2、配置Git身份信息 打开终端，输入以下命令配置用户名和邮箱：\ngit config --global user.name \"你的名字\" git config --global user.email \"你的GitHub邮箱\" 3、配置GitHub SSH密钥（推荐） 打开本地终端，输入以下代码，生成并添加SSH密钥，确保安全免密码推送：\n# 生成SSH密钥 ssh-keygen -t ed25519 -C \"你的GitHub邮箱\" # 直接回车三次使用默认路径且不设置密码 # 查看公钥内容 cat ~/.ssh/id_ed25519.pub 打开 GitHub → Settings → SSH and GPG keys → New SSH key标题随便填，粘贴刚才复制的内容 → Add SSH key\n4、测试git和GitHub连通 终端输入代码：\nssh -T git@github.com 成功会返回：\nHi username! You've successfully authenticated, but GitHub does not provide shell access. 如果提示 Permission denied (publickey)，说明 SSH 密钥未配置或未加载。\nGit基本操作流程 场景一：本地全新项目 → 推到 GitHub 新仓库 # 1. 进入项目文件夹 cd /path/to/your/project # 2. 初始化 Git 仓库 git init # 3. 添加所有文件 git add . # 4. 提交（写个有意义的留言） git commit -m \"初次提交：我的超级项目 v1.0\" # 5. 在 GitHub 网页新建仓库（别勾初始化 README！） # 仓库名：my-awesome-project # 6. 复制 GitHub 给的 SSH 地址，例如： # git@github.com:vincentS1981/my-awesome-project.git # 7. 关联远程仓库 git remote add origin git@github.com:vincentS1981/my-awesome-project.git # 8. 推上去！（-u 记住以后直接 git push） git push -u origin main 场景二：本地已有 Git 项目 → 推到 GitHub cd /path/to/your/existing-project # 确认已有 commit git log --oneline # 关联 + 推送（同上 7~8） git remote add origin git@github.com:vincentS1981/existing-project.git git push -u origin main 每天更新代码只需 3 行 git add . git commit -m \"修复了登录 bug\" git push 相关资源 GitHub官网 GitHub学习路径 GitHub文档 GitHub市场 ",
-  "wordCount" : "339",
+  "articleBody": "Git与GitHub入门指南 Git是一款分布式版本控制软件，用于记录代码的历史变更，支持多分支开发和远程协作。本文将带你从零开始了解Git的基本概念、优势、常用命令及工作流程，并介绍GitHub平台如何助力团队协作。\nGit和GitHub基本概念 Git简介 Git是一种分布式版本控制系统，意味着每个开发者本地都有完整的仓库副本，包括所有提交、分支和文件。与集中式版本控制不同，Git允许离线操作并提供更强的灵活性。\n分支轻量且易创建，支持大量分支并行开发 通过SHA哈希存储变更，适合文本文件版本管理，不适合大二进制文件 支持本地和远程仓库连接，方便推送（push）和拉取（pull）代码 Git核心组件由C语言、Shell脚本、Perl和Tcl编写，源代码托管在GitHub的git/git仓库。\nGitHub简介 GitHub是基于Git的协作平台，支持拉取请求、代码评审、集成测试等功能，极大提升团队开发效率。开发者通常在本地使用Git进行开发，通过GitHub进行远程协作。\n学习Git与GitHub的最佳实践课程推荐GitHub学习实验室。\n为什么使用Git？ 使用版本控制可以有效防止代码丢失，Git具有以下显著优势：\n速度快 Git通过SHA压缩技术，使代码提交和检索速度极快。\n处理合并冲突能力强 允许多人同时编辑同一文件，Git能智能处理冲突，保障团队协作顺畅。\n分支成本低 分支创建和管理成本低，开发者可以在分支中安全开发，及时推送并获得反馈。\n易于回滚 提交不可更改，只能新增替代提交，支持轻松回退到历史版本，降低开发风险。\n如何使用Git？ 学习Git基础命令 推荐使用Git速查表，其中包含常用命令：\n# 克隆远程仓库 git clone [url] # 查看当前状态 git status # 查看分支 git branch # 切换分支 git checkout [branch-name] # 添加文件到暂存区 git add [file] # 提交代码并添加说明 git commit -m \"commit message\" # 拉取远程更新并合并 git pull # 推送本地提交 git push # 查看提交日志 git log # 查看远程仓库信息 git remote -v 更多GitHub相关的技术文档可参考GitHub帮助文档。\nGit工作流入门 创建分支：从主分支main切出新分支，建议以功能命名。 修改并提交：编辑代码后，使用git add和git commit保存变更。 推送代码到远程：首次推送新分支时，使用git push -u origin [branch-name]建立关联。 发起拉取请求（Pull Request）：请求将分支合并到main，便于代码审查和集成测试。 协作开发：团队成员可以在拉取请求中评论、审查并提出修改建议。 合并分支：确认无误后，将功能分支合并到main，并删除已完成的分支。 Git与GitHub初次配置 1、下载并安装最新版本的Git 检查本地 Git 是否安装并可用bash\ngit --version 如果返回类似 git version 2.x.x，说明 Git 已安装。 综合一键检测脚本（复制粘贴运行）\necho \"1. 检查 Git 版本...\" git --version echo -e \"\\n2. 测试 HTTPS 连接...\" curl -I https://github.com 2\u003e/dev/null | head -n 1 echo -e \"\\n3. 测试 Git 远程访问...\" git ls-remote https://github.com/git/git.git \u003e/dev/null 2\u003e\u00261 \u0026\u0026 echo \"Git 连接 GitHub 成功\" || echo \"Git 连接失败\" echo -e \"\\n4. 测试 SSH 连接（如果使用 SSH）...\" ssh -T git@github.com 2\u003e\u00261 2、配置Git身份信息 打开终端，输入以下命令配置用户名和邮箱：\ngit config --global user.name \"你的名字\" git config --global user.email \"你的GitHub邮箱\" 3、配置GitHub SSH密钥（推荐） 打开本地终端，输入以下代码，生成并添加SSH密钥，确保安全免密码推送：\n# 生成SSH密钥 ssh-keygen -t ed25519 -C \"你的GitHub邮箱\" # 直接回车三次使用默认路径且不设置密码 # 查看公钥内容 cat ~/.ssh/id_ed25519.pub 打开 GitHub → Settings → SSH and GPG keys → New SSH key标题随便填，粘贴刚才复制的内容 → Add SSH key\n4、测试git和GitHub连通 终端输入代码：\nssh -T git@github.com 成功会返回：\nHi username! You've successfully authenticated, but GitHub does not provide shell access. 如果提示 Permission denied (publickey)，说明 SSH 密钥未配置或未加载。\nGit基本操作流程 场景一：本地全新项目 → 推到 GitHub 新仓库 # 1. 进入项目文件夹 cd /path/to/your/project # 2. 初始化 Git 仓库 git init # 3. 添加所有文件 git add . # 4. 提交（写个有意义的留言） git commit -m \"初次提交：我的超级项目 v1.0\" # 5. 在 GitHub 网页新建仓库（别勾初始化 README！） # 仓库名：my-awesome-project # 6. 复制 GitHub 给的 SSH 地址，例如： # git@github.com:vincentS1981/my-awesome-project.git # 7. 关联远程仓库 git remote add origin git@github.com:vincentS1981/my-awesome-project.git # 8. 推上去！（-u 记住以后直接 git push） git push -u origin main 场景二：本地已有 Git 项目 → 推到 GitHub cd /path/to/your/existing-project # 确认已有 commit git log --oneline # 关联 + 推送（同上 7~8） git remote add origin git@github.com:vincentS1981/existing-project.git git push -u origin main 每天更新代码只需 3 行\ngit add . git commit -m \"修复了登录 bug\" git push 场景三：克隆远程仓库到本地，开展工作流程 直接 clone （根据需要选择如下几种方式） ## 完整克隆项目，包括版本提交历史 git clone https://github.com/xxx/yyy.git # 或者 SSH 方式（推荐，免输密码） git clone git@github.com:xxx/yyy.git ## 仅克隆最新一次提交的代码仓库 git clone --depth=1 https://github.com/xxx/yyy.git 进入项目目录 cd yyy 查看远程分支情况 git branch -a # 查看所有分支 git remote show origin # 看远程默认分支是哪个 创建并切换到自己的开发分支（强烈推荐！不要直接在 main/master 上改） # 推荐命名方式（选一个你团队习惯的） git checkout -b feature/功能描述 # 或者 git checkout -b dev-你的名字 # 或者 git checkout -b bugfix/xxxxxx # 推到远程建立同名分支（以后就不用再加 -u 了） git push -u origin feature/功能描述 日常开发完整流程（以后每天都这么干） # 1. 每天开始工作前，先拉最新代码（防止冲突） git pull # 或者 git pull --rebase（保持线性历史） # 2. 正常写代码... # 3. 修改完了，分阶段提交（推荐小提交） git add . git commit -m \"feat: 添加用户登录功能\" # 4. 推送到远程自己的分支 git push # 因为之前加了 -u，这里直接 push 就行 # 5. 去 GitLab/GitHub 网页点 Merge Request / Pull Request # 让别人 review，合并到 main/master/develop 分支 场景四：本地有修改未提交，如何拉取远程合并 # 把本地分支强制重置为远程完全一致的状态（所有本地修改全丢） git fetch origin git reset --hard origin/你的分支名 # 例如你当前在 main 分支 git fetch origin git reset --hard origin/main # 如果你想顺便清理未跟踪的文件（比如新生成的文件） git clean -fd 或者：\n# 1. 先把本地修改暂时藏起来 git stash push -m \"临时保存的修改\" # 2. 拉取远程并合并（或变基） git pull # 或者 git pull --rebase # 或者更稳妥： # git fetch origin # git rebase origin/main #（以 main 为例） # 3. 之后如果你还想要回刚才的修改 git stash pop # 恢复刚才藏起来的修改，可能会有冲突需要手动解决 # 如果确认不要了，直接清空stash git stash drop # 删掉最近一个 # 或 git stash clear # 清空所有stash 相关资源 GitHub官网 GitHub学习路径 GitHub文档 GitHub市场 ",
+  "wordCount" : "535",
   "inLanguage": "zh",
   "image":"http://localhost:1313/images/github-cover-001.jpg","datePublished": "2025-11-02T00:00:00Z",
   "dateModified": "2025-11-02T00:00:00Z",
@@ -133,7 +135,7 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "文森的科技博客",
+    "name": "文森的科技小站",
     "logo": {
       "@type": "ImageObject",
       "url": "http://localhost:1313/favicon.ico"
@@ -146,7 +148,7 @@
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="文森的科技博客 (Alt + H)">文森的科技博客</a>
+            <a href="http://localhost:1313/" accesskey="h" title="文森的科技小站 (Alt + H)">文森的科技小站</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -221,7 +223,7 @@
     <div class="post-description">
       一目了然，掌握Git的基本概念及其工作流程，并阐述了GitHub作为协作平台的作用，帮助技术小白快速掌握从安装、分支管理到协作开发的完整使用方法。
     </div>
-    <div class="post-meta"><span title='2025-11-02 00:00:00 +0000 UTC'>2025年11月2日</span>&nbsp;·&nbsp;<span>2 分钟</span>&nbsp;·&nbsp;<span>文森</span>&nbsp;|&nbsp;<span>
+    <div class="post-meta"><span title='2025-11-02 00:00:00 +0000 UTC'>2025年11月2日</span>&nbsp;·&nbsp;<span>3 分钟</span>&nbsp;·&nbsp;<span>文森</span>&nbsp;|&nbsp;<span>
     <a href="https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content/posts/Git%e4%b8%8eGitHub%e6%8a%80%e6%9c%af%e5%b0%8f%e7%99%bd%e5%85%a5%e9%97%a8%e6%8c%87%e5%8d%97.md" rel="noopener noreferrer edit" target="_blank">Suggest Changes</a>
 </span>
 
@@ -246,20 +248,14 @@
                     <a href="#git%e4%b8%8egithub%e5%85%a5%e9%97%a8%e6%8c%87%e5%8d%97" aria-label="Git与GitHub入门指南">Git与GitHub入门指南</a><ul>
                         
                 <li>
-                    <a href="#%e4%bb%80%e4%b9%88%e6%98%afgit" aria-label="什么是Git？">什么是Git？</a></li>
-                <li>
-                    <a href="#git%e7%9a%84%e7%bc%96%e5%86%99%e8%af%ad%e8%a8%80" aria-label="Git的编写语言">Git的编写语言</a></li>
-                <li>
-                    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bd%bf%e7%94%a8git" aria-label="为什么使用Git？">为什么使用Git？</a><ul>
+                    <a href="#git%e5%92%8cgithub%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5" aria-label="Git和GitHub基本概念">Git和GitHub基本概念</a><ul>
                         
                 <li>
-                    <a href="#%e9%80%9f%e5%ba%a6%e5%bf%ab" aria-label="速度快">速度快</a></li>
+                    <a href="#git%e7%ae%80%e4%bb%8b" aria-label="Git简介">Git简介</a></li>
                 <li>
-                    <a href="#%e5%a4%84%e7%90%86%e5%90%88%e5%b9%b6%e5%86%b2%e7%aa%81%e8%83%bd%e5%8a%9b%e5%bc%ba" aria-label="处理合并冲突能力强">处理合并冲突能力强</a></li>
+                    <a href="#github%e7%ae%80%e4%bb%8b" aria-label="GitHub简介">GitHub简介</a></li>
                 <li>
-                    <a href="#%e5%88%86%e6%94%af%e6%88%90%e6%9c%ac%e4%bd%8e" aria-label="分支成本低">分支成本低</a></li>
-                <li>
-                    <a href="#%e6%98%93%e4%ba%8e%e5%9b%9e%e6%bb%9a" aria-label="易于回滚">易于回滚</a></li></ul>
+                    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bd%bf%e7%94%a8git" aria-label="为什么使用Git？">为什么使用Git？</a></li></ul>
                 </li>
                 <li>
                     <a href="#%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8git" aria-label="如何使用Git？">如何使用Git？</a><ul>
@@ -267,17 +263,13 @@
                 <li>
                     <a href="#%e5%ad%a6%e4%b9%a0git%e5%9f%ba%e7%a1%80%e5%91%bd%e4%bb%a4" aria-label="学习Git基础命令">学习Git基础命令</a></li>
                 <li>
-                    <a href="#git%e5%b7%a5%e4%bd%9c%e6%b5%81%e5%85%a5%e9%97%a8" aria-label="Git工作流入门">Git工作流入门</a></li>
-                <li>
-                    <a href="#github%e7%ae%80%e4%bb%8b" aria-label="GitHub简介">GitHub简介</a></li></ul>
+                    <a href="#git%e5%b7%a5%e4%bd%9c%e6%b5%81%e5%85%a5%e9%97%a8" aria-label="Git工作流入门">Git工作流入门</a></li></ul>
                 </li>
                 <li>
-                    <a href="#%e8%ae%be%e7%bd%ae-git%e4%b8%8egithub" aria-label="设置 Git与GitHub">设置 Git与GitHub</a><ul>
+                    <a href="#git%e4%b8%8egithub%e5%88%9d%e6%ac%a1%e9%85%8d%e7%bd%ae" aria-label="Git与GitHub初次配置">Git与GitHub初次配置</a><ul>
                         
                 <li>
                     <a href="#1%e4%b8%8b%e8%bd%bd%e5%b9%b6%e5%ae%89%e8%a3%85%e6%9c%80%e6%96%b0%e7%89%88%e6%9c%ac%e7%9a%84git" aria-label="1、下载并安装最新版本的Git">1、下载并安装最新版本的Git</a></li>
-                <li>
-                    <a href="#%e7%bb%bc%e5%90%88%e4%b8%80%e9%94%ae%e6%a3%80%e6%b5%8b%e8%84%9a%e6%9c%ac%e5%a4%8d%e5%88%b6%e7%b2%98%e8%b4%b4%e8%bf%90%e8%a1%8c" aria-label="综合一键检测脚本（复制粘贴运行）">综合一键检测脚本（复制粘贴运行）</a></li>
                 <li>
                     <a href="#2%e9%85%8d%e7%bd%aegit%e8%ba%ab%e4%bb%bd%e4%bf%a1%e6%81%af" aria-label="2、配置Git身份信息">2、配置Git身份信息</a></li>
                 <li>
@@ -293,7 +285,9 @@
                 <li>
                     <a href="#%e5%9c%ba%e6%99%af%e4%ba%8c%e6%9c%ac%e5%9c%b0%e5%b7%b2%e6%9c%89-git-%e9%a1%b9%e7%9b%ae--%e6%8e%a8%e5%88%b0-github" aria-label="场景二：本地已有 Git 项目 → 推到 GitHub">场景二：本地已有 Git 项目 → 推到 GitHub</a></li>
                 <li>
-                    <a href="#%e6%af%8f%e5%a4%a9%e6%9b%b4%e6%96%b0%e4%bb%a3%e7%a0%81%e5%8f%aa%e9%9c%80-3-%e8%a1%8c" aria-label="每天更新代码只需 3 行">每天更新代码只需 3 行</a></li></ul>
+                    <a href="#%e5%9c%ba%e6%99%af%e4%b8%89%e5%85%8b%e9%9a%86%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93%e5%88%b0%e6%9c%ac%e5%9c%b0%e5%bc%80%e5%b1%95%e5%b7%a5%e4%bd%9c%e6%b5%81%e7%a8%8b" aria-label="场景三：克隆远程仓库到本地，开展工作流程">场景三：克隆远程仓库到本地，开展工作流程</a></li>
+                <li>
+                    <a href="#%e5%9c%ba%e6%99%af%e5%9b%9b%e6%9c%ac%e5%9c%b0%e6%9c%89%e4%bf%ae%e6%94%b9%e6%9c%aa%e6%8f%90%e4%ba%a4%e5%a6%82%e4%bd%95%e6%8b%89%e5%8f%96%e8%bf%9c%e7%a8%8b%e5%90%88%e5%b9%b6" aria-label="场景四：本地有修改未提交，如何拉取远程合并">场景四：本地有修改未提交，如何拉取远程合并</a></li></ul>
                 </li>
                 <li>
                     <a href="#%e7%9b%b8%e5%85%b3%e8%b5%84%e6%ba%90" aria-label="相关资源">相关资源</a>
@@ -306,27 +300,37 @@
 </div>
 
   <div class="post-content"><h1 id="git与github入门指南">Git与GitHub入门指南<a hidden class="anchor" aria-hidden="true" href="#git与github入门指南">#</a></h1>
-<p><img alt="Git远程示意图" loading="lazy" src="https://github.githubassets.com/assets/git-guides-ba03f3804dde.png"></p>
 <p>Git是一款分布式版本控制软件，用于记录代码的历史变更，支持多分支开发和远程协作。本文将带你从零开始了解Git的基本概念、优势、常用命令及工作流程，并介绍GitHub平台如何助力团队协作。</p>
 <hr>
-<h2 id="什么是git">什么是Git？<a hidden class="anchor" aria-hidden="true" href="#什么是git">#</a></h2>
+<h2 id="git和github基本概念">Git和GitHub基本概念<a hidden class="anchor" aria-hidden="true" href="#git和github基本概念">#</a></h2>
+<h3 id="git简介">Git简介<a hidden class="anchor" aria-hidden="true" href="#git简介">#</a></h3>
 <p>Git是一种分布式版本控制系统，意味着每个开发者本地都有完整的仓库副本，包括所有提交、分支和文件。与集中式版本控制不同，Git允许离线操作并提供更强的灵活性。</p>
 <ul>
 <li>分支轻量且易创建，支持大量分支并行开发</li>
 <li>通过SHA哈希存储变更，适合文本文件版本管理，不适合大二进制文件</li>
 <li>支持本地和远程仓库连接，方便推送（push）和拉取（pull）代码</li>
 </ul>
-<h2 id="git的编写语言">Git的编写语言<a hidden class="anchor" aria-hidden="true" href="#git的编写语言">#</a></h2>
 <p>Git核心组件由C语言、Shell脚本、Perl和Tcl编写，源代码托管在GitHub的<a href="https://github.com/git/git">git/git仓库</a>。</p>
-<h2 id="为什么使用git">为什么使用Git？<a hidden class="anchor" aria-hidden="true" href="#为什么使用git">#</a></h2>
+<h3 id="github简介">GitHub简介<a hidden class="anchor" aria-hidden="true" href="#github简介">#</a></h3>
+<p>GitHub是基于Git的协作平台，支持拉取请求、代码评审、集成测试等功能，极大提升团队开发效率。开发者通常在本地使用Git进行开发，通过GitHub进行远程协作。</p>
+<p>学习Git与GitHub的最佳实践课程推荐<a href="https://lab.github.com/githubtraining/introduction-to-github">GitHub学习实验室</a>。</p>
+<h3 id="为什么使用git">为什么使用Git？<a hidden class="anchor" aria-hidden="true" href="#为什么使用git">#</a></h3>
 <p>使用版本控制可以有效防止代码丢失，Git具有以下显著优势：</p>
-<h3 id="速度快">速度快<a hidden class="anchor" aria-hidden="true" href="#速度快">#</a></h3>
+<ol>
+<li>速度快</li>
+</ol>
 <p>Git通过SHA压缩技术，使代码提交和检索速度极快。</p>
-<h3 id="处理合并冲突能力强">处理合并冲突能力强<a hidden class="anchor" aria-hidden="true" href="#处理合并冲突能力强">#</a></h3>
+<ol>
+<li>处理合并冲突能力强</li>
+</ol>
 <p>允许多人同时编辑同一文件，Git能智能处理冲突，保障团队协作顺畅。</p>
-<h3 id="分支成本低">分支成本低<a hidden class="anchor" aria-hidden="true" href="#分支成本低">#</a></h3>
+<ol>
+<li>分支成本低</li>
+</ol>
 <p>分支创建和管理成本低，开发者可以在分支中安全开发，及时推送并获得反馈。</p>
-<h3 id="易于回滚">易于回滚<a hidden class="anchor" aria-hidden="true" href="#易于回滚">#</a></h3>
+<ol>
+<li>易于回滚</li>
+</ol>
 <p>提交不可更改，只能新增替代提交，支持轻松回退到历史版本，降低开发风险。</p>
 <h2 id="如何使用git">如何使用Git？<a hidden class="anchor" aria-hidden="true" href="#如何使用git">#</a></h2>
 <h3 id="学习git基础命令">学习Git基础命令<a hidden class="anchor" aria-hidden="true" href="#学习git基础命令">#</a></h3>
@@ -370,18 +374,15 @@
 <li><strong>协作开发</strong>：团队成员可以在拉取请求中评论、审查并提出修改建议。</li>
 <li><strong>合并分支</strong>：确认无误后，将功能分支合并到<code>main</code>，并删除已完成的分支。</li>
 </ol>
-<h3 id="github简介">GitHub简介<a hidden class="anchor" aria-hidden="true" href="#github简介">#</a></h3>
-<p>GitHub是基于Git的协作平台，支持拉取请求、代码评审、集成测试等功能，极大提升团队开发效率。开发者通常在本地使用Git进行开发，通过GitHub进行远程协作。</p>
-<p>学习Git与GitHub的最佳实践课程推荐<a href="https://lab.github.com/githubtraining/introduction-to-github">GitHub学习实验室</a>。</p>
 <hr>
-<h2 id="设置-git与github"><strong>设置 Git与</strong>GitHub<a hidden class="anchor" aria-hidden="true" href="#设置-git与github">#</a></h2>
+<h2 id="git与github初次配置"><strong>Git与</strong>GitHub初次配置<a hidden class="anchor" aria-hidden="true" href="#git与github初次配置">#</a></h2>
 <h3 id="1下载并安装最新版本的git">1、下载并安装最新版本的Git<a hidden class="anchor" aria-hidden="true" href="#1下载并安装最新版本的git">#</a></h3>
 <p>检查本地 Git 是否安装并可用bash</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git --version
 </span></span></code></pre></div><ul>
 <li>如果返回类似 git version 2.x.x，说明 Git 已安装。</li>
 </ul>
-<h3 id="综合一键检测脚本复制粘贴运行">综合一键检测脚本（复制粘贴运行）<a hidden class="anchor" aria-hidden="true" href="#综合一键检测脚本复制粘贴运行">#</a></h3>
+<p>综合一键检测脚本（复制粘贴运行）</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;1. 检查 Git 版本...&#34;</span>
 </span></span><span class="line"><span class="cl">git --version
 </span></span><span class="line"><span class="cl">
@@ -449,10 +450,86 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 关联 + 推送（同上 7~8）</span>
 </span></span><span class="line"><span class="cl">git remote add origin git@github.com:vincentS1981/existing-project.git
 </span></span><span class="line"><span class="cl">git push -u origin main
-</span></span></code></pre></div><h3 id="每天更新代码只需-3-行">每天更新代码只需 3 行<a hidden class="anchor" aria-hidden="true" href="#每天更新代码只需-3-行">#</a></h3>
+</span></span></code></pre></div><p>每天更新代码只需 3 行</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git add .
 </span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;修复了登录 bug&#34;</span>
 </span></span><span class="line"><span class="cl">git push
+</span></span></code></pre></div><h3 id="场景三克隆远程仓库到本地开展工作流程">场景三：克隆远程仓库到本地，开展工作流程<a hidden class="anchor" aria-hidden="true" href="#场景三克隆远程仓库到本地开展工作流程">#</a></h3>
+<ol>
+<li>直接 clone （根据需要选择如下几种方式）</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">## 完整克隆项目，包括版本提交历史</span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/xxx/yyy.git
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者 SSH 方式（推荐，免输密码）</span>
+</span></span><span class="line"><span class="cl">git clone git@github.com:xxx/yyy.git
+</span></span><span class="line"><span class="cl"><span class="c1">## 仅克隆最新一次提交的代码仓库</span>
+</span></span><span class="line"><span class="cl">git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/xxx/yyy.git
+</span></span></code></pre></div><ol>
+<li>进入项目目录</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> yyy
+</span></span></code></pre></div><ol>
+<li>查看远程分支情况</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git branch -a        <span class="c1"># 查看所有分支</span>
+</span></span><span class="line"><span class="cl">git remote show origin   <span class="c1"># 看远程默认分支是哪个</span>
+</span></span></code></pre></div><ol>
+<li>创建并切换到自己的开发分支（强烈推荐！不要直接在 main/master 上改）</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 推荐命名方式（选一个你团队习惯的）</span>
+</span></span><span class="line"><span class="cl">git checkout -b feature/功能描述
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者</span>
+</span></span><span class="line"><span class="cl">git checkout -b dev-你的名字
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者</span>
+</span></span><span class="line"><span class="cl">git checkout -b bugfix/xxxxxx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 推到远程建立同名分支（以后就不用再加 -u 了）</span>
+</span></span><span class="line"><span class="cl">git push -u origin feature/功能描述
+</span></span></code></pre></div><ol>
+<li>日常开发完整流程（以后每天都这么干）</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 每天开始工作前，先拉最新代码（防止冲突）</span>
+</span></span><span class="line"><span class="cl">git pull        <span class="c1"># 或者 git pull --rebase（保持线性历史）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 正常写代码...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 修改完了，分阶段提交（推荐小提交）</span>
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;feat: 添加用户登录功能&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 推送到远程自己的分支</span>
+</span></span><span class="line"><span class="cl">git push        <span class="c1"># 因为之前加了 -u，这里直接 push 就行</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5. 去 GitLab/GitHub 网页点 Merge Request / Pull Request</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#    让别人 review，合并到 main/master/develop 分支</span>
+</span></span></code></pre></div><h3 id="场景四本地有修改未提交如何拉取远程合并">场景四：本地有修改未提交，如何拉取远程合并<a hidden class="anchor" aria-hidden="true" href="#场景四本地有修改未提交如何拉取远程合并">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 把本地分支强制重置为远程完全一致的状态（所有本地修改全丢）</span>
+</span></span><span class="line"><span class="cl">git fetch origin
+</span></span><span class="line"><span class="cl">git reset --hard origin/你的分支名
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 例如你当前在 main 分支</span>
+</span></span><span class="line"><span class="cl">git fetch origin
+</span></span><span class="line"><span class="cl">git reset --hard origin/main
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果你想顺便清理未跟踪的文件（比如新生成的文件）</span>
+</span></span><span class="line"><span class="cl">git clean -fd
+</span></span></code></pre></div><p>或者：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="err">#</span> <span class="mf">1.</span> <span class="nx">先把本地修改暂时藏起来</span>
+</span></span><span class="line"><span class="cl"><span class="nx">git</span> <span class="nx">stash</span> <span class="nx">push</span> <span class="o">-</span><span class="nx">m</span> <span class="s2">&#34;临时保存的修改&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="mf">2.</span> <span class="nx">拉取远程并合并</span><span class="err">（</span><span class="nx">或变基</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="nx">git</span> <span class="nx">pull</span>                  <span class="err">#</span> <span class="nx">或者</span> <span class="nx">git</span> <span class="nx">pull</span> <span class="o">--</span><span class="nx">rebase</span>
+</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="nx">或者更稳妥</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="nx">git</span> <span class="nx">fetch</span> <span class="nx">origin</span>
+</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="nx">git</span> <span class="nx">rebase</span> <span class="nx">origin</span><span class="o">/</span><span class="nx">main</span>   <span class="err">#（</span><span class="nx">以</span> <span class="nx">main</span> <span class="nx">为例</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="mf">3.</span> <span class="nx">之后如果你还想要回刚才的修改</span>
+</span></span><span class="line"><span class="cl"><span class="nx">git</span> <span class="nx">stash</span> <span class="nx">pop</span>             <span class="err">#</span> <span class="nx">恢复刚才藏起来的修改</span><span class="err">，</span><span class="nx">可能会有冲突需要手动解决</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="nx">如果确认不要了</span><span class="err">，</span><span class="nx">直接清空stash</span>
+</span></span><span class="line"><span class="cl"><span class="nx">git</span> <span class="nx">stash</span> <span class="nx">drop</span>            <span class="err">#</span> <span class="nx">删掉最近一个</span>
+</span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="nx">或</span>
+</span></span><span class="line"><span class="cl"><span class="nx">git</span> <span class="nx">stash</span> <span class="nx">clear</span>           <span class="err">#</span> <span class="nx">清空所有stash</span>
 </span></span></code></pre></div><h2 id="相关资源">相关资源<a hidden class="anchor" aria-hidden="true" href="#相关资源">#</a></h2>
 <ul>
 <li><a href="https://github.com/">GitHub官网</a></li>

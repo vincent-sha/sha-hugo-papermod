@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Cloudflare on 文森的科技博客</title>
+    <title>Cloudflare on 文森的科技小站</title>
     <link>http://localhost:1313/tags/cloudflare/</link>
-    <description>Recent content in Cloudflare on 文森的科技博客</description>
+    <description>Recent content in Cloudflare on 文森的科技小站</description>
     <image>
-      <title>文森的科技博客</title>
+      <title>文森的科技小站</title>
       <url>http://localhost:1313/images/papermod-cover.png</url>
       <link>http://localhost:1313/images/papermod-cover.png</link>
     </image>
